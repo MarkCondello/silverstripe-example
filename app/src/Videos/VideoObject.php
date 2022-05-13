@@ -1,5 +1,6 @@
 <?php 
-namespace SilverStripe\Lessons;
+namespace SilverStripe\Lessons\Videos;
+
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Assets\File;
 use SilverStripe\AssetAdmin\Forms\UploadField;

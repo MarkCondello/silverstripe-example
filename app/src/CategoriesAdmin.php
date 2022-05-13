@@ -1,6 +1,7 @@
 <?php 
 namespace SilverStripe\Lessons;
 
+use SilverStripe\Lessons\videos\VideoCategory;
 use SilverStripe\Admin\ModelAdmin;
 
 class CategoriesAdmin extends ModelAdmin 

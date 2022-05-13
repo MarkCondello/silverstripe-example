@@ -1,6 +1,6 @@
 <?php 
+namespace SilverStripe\Lessons\Videos;
 
-namespace SilverStripe\Lessons;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextareaField;
