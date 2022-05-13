@@ -29,5 +29,24 @@
 				</div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="list-unstyled">
+        <% loop $VideoComments %>
+          <li class="media my-5">
+            <div class="media-body">
+            <h5 class="mt-0 mb-1">$Name </h5> $Comment
+            </div>
+          </li>
+        <% end_loop %>
+      </ul>
+      </div>
+    </div>
+    <div class="row">
+      <h1>Comment form:</h1>
+      <div class="col-md-6">
+        $CommentForm
+      </div>
+    </div>
   </div>
 </div>

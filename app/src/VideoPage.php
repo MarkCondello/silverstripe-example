@@ -9,7 +9,8 @@ use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 
 class VideoPage extends Page {
   private static $has_many = [
-    'VideoObjects' => VideoObject::class
+    'VideoObjects' => VideoObject::class,
+    'VideoComments' => VideoComment::class
   ];
 
   // Because this class extends Page it already has CMS fields, we must reference the parent method

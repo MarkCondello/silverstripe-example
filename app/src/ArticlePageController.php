@@ -11,6 +11,7 @@ class ArticlePageController extends PageController
   {
     parent::init();
 
+    // ToDo: How do I pass data like this to the view???
     // $brochureLink = $this->Brochure->Link();
     //   Debug::dump($brochureLink);
   }
