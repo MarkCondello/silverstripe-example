@@ -13,7 +13,6 @@
 						<% include SidebarMenu %>
 					</ul>
 				<% end_if %>
-
 			</li>
 		<% end_loop %>
 	<% end_if %>

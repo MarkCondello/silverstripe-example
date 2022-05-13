@@ -1,3 +1,4 @@
+
 <!-- BEGIN HEADER  -->
 <header id="header">
   <% include TopBar %>
@@ -30,7 +31,9 @@
 				
 				<div class="post-content">
 					<div class="highlight-bold">
-          Phasellus suscipit aliquam nisl et porttitor. Suspendisse potenti. Fusce libero velit, tristique eu mauris vitae, convallis facilisis sapien. Mauris urna diam, fringilla sit amet eleifend id, commodo ac lorem. Curabitur at erat justo.</div>
+						$Teaser
+					</div>
+          <%-- Phasellus suscipit aliquam nisl et porttitor. Suspendisse potenti. Fusce libero velit, tristique eu mauris vitae, convallis facilisis sapien. Mauris urna diam, fringilla sit amet eleifend id, commodo ac lorem. Curabitur at erat justo.</div> --%>
 					
 					<div class="divider"></div>
 					
@@ -63,8 +66,7 @@
 						<li><a target="_blank" href="http://pinterest.com/pin/create/button/?url=http://www.wiselythemes.com/html/cozy/blog-detail.html&amp;description=Cozy%20Blog%20Post&amp;media=http%3A%2F%2Fwww.wiselythemes.com%2Fhtml%2Fcozy%2Fimages%2Fnews-img1.jpg"><i class="fa fa-pinterest"></i></a></li>
 						<li><a href="mailto:?subject=Check%20out%20this%20blog%20post%20from%20Cozy%20Real%20Estate!&amp;body=http://www.wiselythemes.com/html/cozy/blog-detail.html"><i class="fa fa-envelope"></i></a></li>
 					</ul>
-					<h2>Brochure???</h2>	
-					<% if $Brochure %>
+					<% if $Brochure  %>
 					<div class="row">
 						<% with $Brochure %>
 						<div class="col-sm-12">
