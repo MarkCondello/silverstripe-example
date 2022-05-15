@@ -67,10 +67,11 @@
 						<li><a href="mailto:?subject=Check%20out%20this%20blog%20post%20from%20Cozy%20Real%20Estate!&amp;body=http://www.wiselythemes.com/html/cozy/blog-detail.html"><i class="fa fa-envelope"></i></a></li>
 					</ul>
 					<% if $Brochure  %>
+					<%-- <p>$Brochure.URL</p> --%>
 					<div class="row">
 						<% with $Brochure %>
 						<div class="col-sm-12">
-						<a class="btn btn-warning btn-block" href="$Brochure.URL">Download brochure [$Extension] ($Size)</a>
+							<a class="btn btn-warning btn-block" href="$URL">Download brochure [$Extension] ($Size)</a>
 						</div>
 					<% end_with %>
 					</div>	
@@ -140,7 +141,7 @@
 				
 			</div>	
 			<!-- END MAIN CONTENT -->
-			
+		
 			
 			<!-- BEGIN SIDEBAR -->
 			<div class="sidebar gray col-sm-4">

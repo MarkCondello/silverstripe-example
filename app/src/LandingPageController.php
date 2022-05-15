@@ -58,7 +58,8 @@ class LandingPageController extends PageController
   public function GetCustomerRatings()
   {
     // $ratings = $this->CustomerRatings; SS Issue: There is no relation from LandingPage to CustomerRating
-    return CustomerRating::get()->where(['LandingPageID', $this->ID])->sort('Created', 'DESC');
+    return CustomerRating::get()
+      ->where("\"LandingPageID\" = $this->ID")->sort('Created', 'DESC');
      //Debug::dump($ratings);
   }
 }
