@@ -6,14 +6,20 @@ use SilverStripe\Forms\DropdownField;
 
 class LandingPage extends Page
 {
-  // a LandingPage can have one ServiceType, a ServiceType can have many LandingPages
   private static $table_name = 'LandingPage';
   private static $db = [
     'BannerTitle' => 'Text',
   ];
-
+  
+  // a LandingPage can have one ServiceType, a ServiceType can have many LandingPages
   private static $has_one = [
-    'ServiceType' => ServiceType::class
+    'ServiceType' => ServiceType::class,
+  ];
+
+  // a LandingPage can have many CustomerRatings, a Customer Rating can have one LandingPage
+  // SS ISSUE: This columns was not getting added to the Table after a build
+  private static $has_many = [
+    'CustomerRatings' => CustomerRating::class,
   ];
   
   public function getCMSFields()
