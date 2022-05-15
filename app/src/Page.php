@@ -3,6 +3,7 @@
 namespace {
 
     use SilverStripe\CMS\Model\SiteTree;
+    use SilverStripe\Dev\Debug;
 
     class Page extends SiteTree
     {

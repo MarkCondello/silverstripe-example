@@ -18,7 +18,6 @@
 								<a href="blog-detail.html">
 									<span class="btn btn-default">Read More</span>
 								</a>
-								
 								<% if $Photo %>
 									$Photo.Fit(242,156) 
 								<% else %>
