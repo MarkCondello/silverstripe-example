@@ -3,8 +3,8 @@
 namespace {
 
     use SilverStripe\CMS\Controllers\ContentController;
+    use SilverStripe\Control\HTTPRequest;
     use SilverStripe\View\Requirements;
-
 
     class PageController extends ContentController
     {
@@ -23,7 +23,21 @@ namespace {
          *
          * @var array
          */
-        private static $allowed_actions = [];
+        
+        private static $allowed_actions = [
+            'feedViewableData'
+        ];
+        private static $url_handlers = [
+            'fetchViewableData' => 'feedViewableData'
+        ];
+
+        public function feedViewableData(HTTPRequest $request)
+        {
+            $viewableData = [
+                'Content' => $this->Content
+            ];
+            return json_encode($viewableData);
+        }
 
         protected function init()
         {
