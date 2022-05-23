@@ -23,10 +23,10 @@ class LandingPageHolderController extends PageController
   public function index(HTTPRequest $request)
   {
     $landingPages = LandingPage::get();
-    if($catID = $request->getVar('ServiceTypeID')) {
-      $landingPages = LandingPage::get()->where(
-        "\"ServiceTypeID\" = $catID"
-      );
+    if ($serviceID = $request->getVar('ServiceTypeID')) {
+      $landingPages = $landingPages->filter([
+        'ServiceType.ID' => $serviceID
+      ]);
     }
     $paginatedLandingPages = PaginatedList::create(
       $landingPages,

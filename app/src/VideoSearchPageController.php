@@ -13,16 +13,19 @@ use SilverStripe\Forms\FormAction;
 use SilverStripe\View\ArrayData;
 use SilverStripe\Dev\Debug;
 
+use SilverStripe\View\Requirements;
+
 use SilverStripe\Forms\DropdownField;
 
 class VideoSearchPageController extends PageController {
 
   private static $allowed_actions = ['VideoSearchForm'];
  
-  // public function GetVids()
-  // {
-  //   return VideoObject::get();
-  // }
+  public function init()
+  {
+    parent::init();
+    Requirements::javascript('javascript/bootstrap/js/pagination.js', ['defer' => true]);
+  }
   public function index(HTTPRequest $request)
   {
     $videos = VideoObject::get();
