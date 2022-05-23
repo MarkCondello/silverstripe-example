@@ -13,6 +13,8 @@ use SilverStripe\Forms\FormAction;
 use SilverStripe\View\ArrayData;
 use SilverStripe\Dev\Debug;
 
+use SilverStripe\Forms\DropdownField;
+
 class VideoSearchPageController extends PageController {
 
   private static $allowed_actions = ['VideoSearchForm'];
@@ -38,6 +40,13 @@ class VideoSearchPageController extends PageController {
       //   'Title:PartialMatch' => $search
       // ]);
     }
+    if ($catID = $request->getVar('CategoryID')) {
+      $videos = $videos->filter([
+        // VideoCategories is set in the VideoObject
+        'VideoCategories.ID' => $catID
+      ]);
+    }
+
     $paginatedVideos = PaginatedList::create(
       $videos,
       $request
@@ -60,19 +69,18 @@ class VideoSearchPageController extends PageController {
       'VideoSearchForm',
       FieldList::create(
         TextField::create('Keywords')
-          ->setAttribute('placeholder', 'Search for a video')
+          ->setAttribute('placeholder', 'Search for a video'),
+        DropdownField::create('CategoryID', 'Select a Category', VideoCategory::get()->map('ID', 'Title') )->setEmptyString('(Select a Category)')
       ),
       FieldList::create(
         FormAction::create('index', 'Search')
         // FormAction::create('doVideoSearch', 'Search') // WT?? what is doVideoSearch
       )
     );
-
     $form->setFormMethod('GET')
       ->setFormAction($this->Link()) //WT??? this->Link() is this controller
       ->disableSecurityToken()
       ->loadDataFrom($this->request->getVars()); // fill out the form with query params
-    
     return $form;
   }
 

@@ -6,6 +6,7 @@ use SilverStripe\Forms\DropdownField;
 
 class LandingPage extends Page
 {
+  private static $can_be_root = false;
   private static $table_name = 'LandingPage';
   private static $db = [
     'BannerTitle' => 'Text',

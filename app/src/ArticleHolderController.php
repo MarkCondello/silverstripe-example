@@ -12,5 +12,4 @@ class ArticleHolderController extends PageController
   {
     parent::init();
   }
-
 }

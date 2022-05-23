@@ -44,7 +44,9 @@
 					<% end_loop %>
 					</div>
 				</div>
-				<!-- BEGIN PAGINATION -->
+				<%-- ToDo: Include real pagination partial --%>
+				
+				<%-- <!-- BEGIN PAGINATION -->
 				<div class="pagination">
 					<ul id="previous">
 						<li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
@@ -59,7 +61,7 @@
 						<li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
 					</ul>
 				</div>
-				<!-- END PAGINATION -->
+				<!-- END PAGINATION --> --%>
 				
 			</div>	
 			<!-- END MAIN CONTENT -->
