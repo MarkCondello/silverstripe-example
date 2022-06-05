@@ -1,5 +1,12 @@
 		
-		<!-- BEGIN CONTENT WRAPPER -->
+	<!-- BEGIN HEADER  -->
+<header id="header">
+  <% include TopBar %>
+  <% include NavSection %>
+</header>
+<% include BreadCrumbs %>
+	
+	<!-- BEGIN CONTENT WRAPPER -->
 		<div class="content">
 			<div class="container">
 				<div class="row">
@@ -10,7 +17,23 @@
 						
 						<!-- BEGIN BLOG LISTING -->
 						<div class="grid-style1 clearfix">
+						<% loop $Regions %>
 							<div class="item col-md-12"><!-- Set width to 4 columns for grid view mode only -->
+									<div class="image image-large">
+											<a href="#">
+													<span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
+											</a>
+											$Photo.Fit(720,255)
+									</div>
+									<div class="info-blog">
+											<h3>
+													<a href="#">$Title</a>
+											</h3>
+											<p>$Description</p>
+									</div>
+							</div>
+							<% end_loop %>
+							<%-- <div class="item col-md-12"><!-- Set width to 4 columns for grid view mode only -->
 								<div class="image image-large">
 									<a href="#">
 										<span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
@@ -66,14 +89,14 @@
 									</h3>
 									<p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac pellentesque fringilla, tortor libero condimen. Aliquam fermem tum nulla felis, sed molestie libero porttitor in.</p>
 								</div>
-							</div>
+							</div> --%>
 
 						</div>
 						<!-- END BLOG LISTING -->
 						
 						
 						<!-- BEGIN PAGINATION -->
-						<div class="pagination">
+						<%-- <div class="pagination">
 							<ul id="previous">
 								<li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
 							</ul>
@@ -86,7 +109,7 @@
 							<ul id="next">
 								<li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
 							</ul>
-						</div>
+						</div> --%>
 						<!-- END PAGINATION -->
 						
 					</div>	
