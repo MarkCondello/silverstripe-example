@@ -11,4 +11,11 @@ class HomePageController extends PageController
     parent::init();
   }
 
+  public function LatestArticles($count = 3)
+  {
+    return ArticlePage::get()
+      ->sort('Created', 'DESC')
+      ->limit($count);
+  }
+
 }
