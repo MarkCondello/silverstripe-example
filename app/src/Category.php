@@ -3,12 +3,11 @@
 namespace SilverStripe\Lessons;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
 
-class VideoCategory extends DataObject 
+class Category extends DataObject 
 {
-  private static $table_name = 'VideoCategory';
+  private static $table_name = 'Category';
 
   private static $db = [
     'Title' => 'Text',

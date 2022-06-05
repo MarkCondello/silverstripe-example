@@ -15,6 +15,7 @@ class VideoObject extends DataObject {
   private static $db = [
     'Title' => 'Text',
     'Description' => 'Text',
+    'ShowReadTime' => 'Boolean'
   ];
   private static $has_one = [
     'VideoSource' => File::class,
@@ -28,7 +29,7 @@ class VideoObject extends DataObject {
   ];
 
   private static $many_many = [
-    'VideoCategories' => VideoCategory::class
+    'VideoCategories' => Category::class
   ];
 
   public function getCMSFields()
@@ -39,7 +40,9 @@ class VideoObject extends DataObject {
       TextareaField::create('Description'),
       UploadField::create('VideoSource'),
       UploadField::create('VideoThumbnail'),
-      CheckboxSetField::create('VideoCategories', 'Categories', VideoCategory::get())
+      CheckboxSetField::create('VideoCategories', 'Categories', Category::get()),
+
+      CheckboxSetField::create('ShowReadTime', 'Show read time', [true => 'Yes'])
     );
   }
 }

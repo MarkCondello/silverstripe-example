@@ -12,6 +12,6 @@ class CategoriesAdmin extends ModelAdmin
   private static $url_segment = 'categories';
 
   private static $managed_models = [
-    VideoCategory::class
+    Category::class
   ];
 }
