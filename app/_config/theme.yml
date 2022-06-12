@@ -1,6 +1,9 @@
 ---
 Name: mytheme
 ---
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - SilverStripe\Lessons\MySiteConfigExtension
 SilverStripe\View\SSViewer:
   themes:
     - '$public'

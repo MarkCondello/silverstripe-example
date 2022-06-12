@@ -19,7 +19,7 @@
 	<div id="wrapper">
 		$Layout
 	</div>
-	<div id="app"></div>
+	<%-- <div id="app"></div> This is the react dom container--%>
 	<script src="/react/javascript/bundle.js"></script>	
 </body>
 </html>

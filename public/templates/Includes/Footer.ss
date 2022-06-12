@@ -73,22 +73,39 @@
       <div class="row">
         <div class="col-sm-12">
           &copy; 2014 One Ring Rentals
-          
-          <!-- BEGIN SOCIAL NETWORKS -->
           <ul class="social-networks">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-google"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+          <% with $siteConfig %>
+            <% if $FacebookLink %>
+            <li><a href="$FacebookLink"><i class="fa fa-facebook"></i></a></li>
+            <% end_if %>
+            <% if $TwitterLink %>
+            <li><a href="$TwitterLink"><i class="fa fa-twitter"></i></a></li>
+            <% end_if %>
+            <% if $GoogleLink %>
+            <li><a href="$GoogleLink"><i class="fa fa-google"></i></a></li>
+            <% end_if %>
+            <%-- <li><a href="#"><i class="fa fa-pinterest"></i></a></li> --%>
+            <% if $YouTubeLink %>
+            <li><a href="$YouTubeLink"><i class="fa fa-youtube"></i></a></li>
+          <% end_if %>
+            <%-- <li><a href="#"><i class="fa fa-rss"></i></a></li> --%>
+          <% end_with %>
           </ul>
           <!-- END SOCIAL NETWORKS -->
-        
         </div>
       </div>
     </div>
   </div>
+  <% with $siteConfig %>
+    <% if $FooterContent %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+      <small>$FooterContent</small>
+      </div>
+    </div>
+  </div>
+<% end_if %>
+<% end_with %>
   <!-- END COPYRIGHT -->
-  
 </footer>

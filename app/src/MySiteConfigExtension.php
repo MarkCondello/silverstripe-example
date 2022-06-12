@@ -9,19 +9,21 @@ use SilverStripe\Forms\TextareaField;
 class MySiteConfigExtension extends DataExtension
 {
   private static $db = [
-    'FB_Link' => 'VarChar',
-    'Twitter_Link' => 'VarChar',
-    'Youtube_Link' => 'VarChar',
-    'FooterContent' => 'Text',
+    'FacebookLink' => 'Varchar',
+    'TwitterLink' => 'Varchar',
+    'GoogleLink' => 'Varchar',
+    'YouTubeLink' => 'Varchar',
+    'FooterContent' => 'Text'
   ];
 
   public function updateCMSFields(FieldList $fields)
   {
-    $fields->addFieldsToTab('Root.Social', [
-      TextField::create('FB_Link', 'Facebook'),
-      TextField::create('Twitter_Link', 'Twitter'),
-      TextField::create('Youtube_Link', 'Youtbue'),
-    ]);
+    $fields->addFieldsToTab('Root.Social', array (
+        TextField::create('FacebookLink','Facebook'),
+        TextField::create('TwitterLink','Twitter'),
+        TextField::create('GoogleLink','Google'),
+        TextField::create('YouTubeLink','YouTube')
+    ));
     $fields->addFieldsToTab('Root.Main', TextareaField::create('FooterContent', 'Content for footer'));
   }
 }
