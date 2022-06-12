@@ -4,6 +4,9 @@ Name: mytheme
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - SilverStripe\Lessons\MySiteConfigExtension
+SilverStripe\Security\Member:
+  extensions:
+    - SilverStripe\Lessons\MyMemberExtension
 SilverStripe\View\SSViewer:
   themes:
     - '$public'
