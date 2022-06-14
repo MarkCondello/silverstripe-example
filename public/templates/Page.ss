@@ -19,8 +19,8 @@
 	<%-- CurrentMember custom fields --%>
 	<%-- <p>$CurrentMember.DateOfBirth</p>
 	<p>$CurrentMember.GreetMember</p>
-	<p>$CurrentMember.Position</p> --%>
-	<%-- <img src="$CurrentMember.ProfileImage.URL" width="40"/> --%>
+	<p>$CurrentMember.Position</p>
+	<img src="$CurrentMember.ProfileImage.URL" width="40"/> --%>
 	<div id="wrapper">
 		$Layout
 	</div>
