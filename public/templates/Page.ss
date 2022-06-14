@@ -16,10 +16,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,500,900%7COpen+Sans:400,700,400italic" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<p>$CurrentMember.DateOfBirth</p>
+	<%-- CurrentMember custom fields --%>
+	<%-- <p>$CurrentMember.DateOfBirth</p>
 	<p>$CurrentMember.GreetMember</p>
-	<p>$CurrentMember.Position</p>
-	<img src="$CurrentMember.ProfileImage.URL" width="40"/>
+	<p>$CurrentMember.Position</p> --%>
+	<%-- <img src="$CurrentMember.ProfileImage.URL" width="40"/> --%>
 	<div id="wrapper">
 		$Layout
 	</div>
