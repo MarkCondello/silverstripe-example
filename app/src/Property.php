@@ -12,6 +12,8 @@ use SilverStripe\ORM\ArrayLib;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\TabSet;
 
+use SilverStripe\Versioned\Versioned;
+
 class Property extends DataObject
 {
   private static $table_name = "Property";
@@ -21,14 +23,61 @@ class Property extends DataObject
     'PricePerNight' => 'Currency',
     'Bedrooms' => 'Int',
     'Bathrooms' => 'Int',
-    'FeaturedOnHomepage' => 'Boolean',
-
+    'FeaturedOnHomepage' => 'Boolean'
   ];
 
   private static $has_one = [
     'PrimaryPhoto' => Image::class,
+    'Region' => Region::class
   ];
-  // 'Region' => Region::class, //ToDo: The lesson on adding Regions
+
+  private static $summary_fields = [
+    'Title' => 'Title',
+    'Region.Title' => 'Region',
+    'PricePerNight.Nice' => 'Price',
+    'FeaturedOnHomepage.Nice' => 'Featured?'
+  ];
+//   private static $searchable_fields = [
+//     'Title',
+//     'Region.Title',
+//     'FeaturedOnHomepage'
+// ]; 
+
+private static $owns = [
+  'PrimaryPhoto',
+];
+
+private static $extensions = [
+  Versioned::class,
+];
+
+private static $versioned_gridfield_extensions = true;
+
+  //custom filtering of the table
+  public function searchableFields()
+  {
+
+    return [
+      'Title' => [
+        'filter' => 'PartialMatchFilter',
+        'title' => 'Title',
+        'field' => TextField::class,
+      ], 
+      'Region.Title' => [
+        'filter' => 'ExactMatchFilter',
+        'title' => 'Region',
+        'field' => DropdownField::create('RegionID')
+        ->setSource(
+          Region::get()->map('ID','Title')
+          )
+          ->setEmptyString('-- Any Region --')
+      ],
+      'FeaturedOnHomepage' => [
+        'filter' => 'ExactMatchFilter',
+        'title' => 'Only Featured'
+      ]
+    ];
+  } 
 
   public function getCMSFields()
   {
@@ -40,9 +89,11 @@ class Property extends DataObject
         ->setSource(ArrayLib::valuekey(range(1, 10))),
       DropdownField::create('Bathrooms')
         ->setSource(ArrayLib::valuekey(range(1, 10))),
-      // DropdownField::create('RegionId', 'Region')
-      //   ->setSource(Region::get()->map('ID', 'title')), //ToDo: Add this when adding Regions
-      CheckboxField::create('FeaturedOnHomePage', 'Featured on home page'),
+      DropdownField::create('RegionID', 'Region')
+        ->setSource(Region::get()->map('ID', 'title')),
+      CheckboxField::create('FeaturedOnHomepage', 'Feature on homepage?')
+
+      // CheckboxField::create('FeaturedOnHomePage', 'Featured on home page?')// this does not work. WTF
     ]);
     $fields->addFieldsToTab('Root.Photos', $upload = UploadField::create('PrimaryPhoto', 'Primary photo'));
     $upload->getValidator()->setAllowedExtensions(['png', 'jpeg', 'jpg', 'gif']);
