@@ -24,8 +24,9 @@
 	<div id="wrapper">
 		$Layout
 	</div>
-	<%-- <div id="app"></div> This is the react dom container--%>
-	<script src="/react/javascript/bundle.js"></script>	
+ <%-- <div id="app"></div> This is the react dom container --%>
+	<%-- <script src="/react/javascript/bundle.js"></script> --%>
 </body>
 </html>
+
 <!-- The static templates for the tutes can be found here: https://github.com/silverstripe/one-ring-rentals/tree/master/themes/one-ring/static -->

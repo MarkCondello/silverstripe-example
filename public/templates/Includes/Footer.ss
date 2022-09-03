@@ -11,7 +11,7 @@
         <ul class="footer-links">
           <li><a href="#">All rentals</a></li>
           <li><a href="#">List your rental</a></li>
-          <li><a href="#">Read our FAQs</a></li>							
+          <li><a href="#">Read our FAQs</a></li>
         </ul>
       </div>
       <div class="block col-sm-6">
@@ -65,8 +65,6 @@
       </div>
     </div>
   </div>
-  
-  
   <!-- BEGIN COPYRIGHT -->
   <div id="copyright">
     <div class="container">
@@ -96,8 +94,8 @@
       </div>
     </div>
   </div>
-  <% with $siteConfig %>
-    <% if $FooterContent %>
+<% with $siteConfig %>
+  <% if $FooterContent %>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -105,7 +103,7 @@
       </div>
     </div>
   </div>
-<% end_if %>
+  <% end_if %>
 <% end_with %>
   <!-- END COPYRIGHT -->
 </footer>
