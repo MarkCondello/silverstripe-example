@@ -4,4 +4,5 @@
 /themes/simple/
 /_resources/
 /public/_resources/
+/public/build/
 /node_modules

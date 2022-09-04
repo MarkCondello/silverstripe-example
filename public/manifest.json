@@ -1,0 +1,66 @@
+{
+  "public/javascript/main-legacy.js": {
+    "file": "build/main-legacy.dedb16d0.js",
+    "src": "public/javascript/main-legacy.js",
+    "isEntry": true,
+    "assets": [
+      "build/glyphicons-halflings-regular.f495f34e.eot",
+      "build/glyphicons-halflings-regular.fc969dc1.woff",
+      "build/glyphicons-halflings-regular.bd18efd3.ttf",
+      "build/glyphicons-halflings-regular.d168d50a.svg",
+      "build/fontawesome-webfont.9f828893.eot",
+      "build/fontawesome-webfont.66db52b4.woff",
+      "build/fontawesome-webfont.c2a9333b.ttf",
+      "build/fontawesome-webfont.4f1f9ffe.svg",
+      "build/cozy-real-estate.568c1e4c.eot",
+      "build/cozy-real-estate.9a5a994c.woff",
+      "build/cozy-real-estate.0865f874.ttf",
+      "build/cozy-real-estate.c34d2ae6.svg",
+      "build/pattern1@2x.95a78d8b.jpg",
+      "build/pattern2.081e1cee.jpg",
+      "build/pattern3.6a399f0a.jpg",
+      "build/pattern4.82e6cc32.jpg",
+      "build/pattern5.c94c9f14.jpg",
+      "build/pattern6.596b0698.jpg",
+      "build/pattern7.4a5df65c.jpg",
+      "build/pattern8.0f661edd.jpg",
+      "build/pattern9.f9cccc2b.jpg"
+    ]
+  },
+  "-legacy": {
+    "file": "build/polyfills-legacy.e6353d46.js",
+    "src": "-legacy",
+    "isEntry": true
+  },
+  "public/javascript/main.js": {
+    "file": "build/main.02b01242.js",
+    "src": "public/javascript/main.js",
+    "isEntry": true,
+    "css": [
+      "build/main.ed57ebfe.css"
+    ],
+    "assets": [
+      "build/glyphicons-halflings-regular.f495f34e.eot",
+      "build/glyphicons-halflings-regular.fc969dc1.woff",
+      "build/glyphicons-halflings-regular.bd18efd3.ttf",
+      "build/glyphicons-halflings-regular.d168d50a.svg",
+      "build/fontawesome-webfont.9f828893.eot",
+      "build/fontawesome-webfont.66db52b4.woff",
+      "build/fontawesome-webfont.c2a9333b.ttf",
+      "build/fontawesome-webfont.4f1f9ffe.svg",
+      "build/cozy-real-estate.568c1e4c.eot",
+      "build/cozy-real-estate.9a5a994c.woff",
+      "build/cozy-real-estate.0865f874.ttf",
+      "build/cozy-real-estate.c34d2ae6.svg",
+      "build/pattern1@2x.95a78d8b.jpg",
+      "build/pattern2.081e1cee.jpg",
+      "build/pattern3.6a399f0a.jpg",
+      "build/pattern4.82e6cc32.jpg",
+      "build/pattern5.c94c9f14.jpg",
+      "build/pattern6.596b0698.jpg",
+      "build/pattern7.4a5df65c.jpg",
+      "build/pattern8.0f661edd.jpg",
+      "build/pattern9.f9cccc2b.jpg"
+    ]
+  }
+}
