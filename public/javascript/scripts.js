@@ -1,4 +1,5 @@
 (function($) {
+    console.log('loaded scripts..')
     $(function () {
         if ($('select').length) {
             $("select").chosen({
@@ -35,7 +36,7 @@
                 setTimeout(function () {
                     $wrapper.addClass('open');
                     $navMobile.addClass('open');
-                    $navMobile.getNiceScroll().show();
+                    // $navMobile.getNiceScroll().show();
                 }, 25);
                 $(document).bind(etype, function (e) {
                     if (!$(e.target).hasClass('nav-mobile') && !$(e.target).parents('.nav-mobile').length) {

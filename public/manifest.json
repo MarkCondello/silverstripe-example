@@ -1,6 +1,6 @@
 {
   "public/javascript/main-legacy.js": {
-    "file": "build/main-legacy.dedb16d0.js",
+    "file": "build/main-legacy.4ddb8bda.js",
     "src": "public/javascript/main-legacy.js",
     "isEntry": true,
     "assets": [
@@ -33,7 +33,7 @@
     "isEntry": true
   },
   "public/javascript/main.js": {
-    "file": "build/main.02b01242.js",
+    "file": "build/main.523a9921.js",
     "src": "public/javascript/main.js",
     "isEntry": true,
     "css": [

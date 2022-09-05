@@ -13,7 +13,6 @@
 	<![endif]-->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,500,900%7COpen+Sans:400,700,400italic" rel="stylesheet" type="text/css" />
 	$Vite.HeaderTags.RAW
-	<%-- This $Vite.HeaderTags.RAW directive render out <script src="http://localhost:8890/public/javascript/main.js" type="module"></script> --%>
 </head>
 <body>
 	<div id="wrapper">
@@ -21,7 +20,6 @@
 	</div>
 	<div id="counter"></div>
 	$Vite.BodyTags.RAW
-	<%-- This $Vite.BodyTags.RAW directive render out <script src="http://localhost:8890/@vite/client" type="module"></script> --%>
 </body>
 </html>
 <!-- The static templates for the tutes can be found here: https://github.com/silverstripe/one-ring-rentals/tree/master/themes/one-ring/static -->
