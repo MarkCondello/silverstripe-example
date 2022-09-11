@@ -1,5 +1,4 @@
 (function($) {
-    console.log('loaded scripts..')
     $(function () {
         if ($('select').length) {
             $("select").chosen({

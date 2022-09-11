@@ -18,7 +18,6 @@
 	<div id="wrapper">
 		$Layout
 	</div>
-	<div id="counter"></div>
 	$Vite.BodyTags.RAW
 </body>
 </html>

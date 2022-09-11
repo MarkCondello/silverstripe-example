@@ -20,7 +20,7 @@ Page:
     - ViteHelper\Vite\ViteDataExtension
 
 ViteHelper\Vite\ViteHelper:
-  forceProductionMode: true
+  forceProductionMode: false
   devHostNeedle: '8890'
   devPort: 8891
   jsSrcDirectory: 'public/javascript/'

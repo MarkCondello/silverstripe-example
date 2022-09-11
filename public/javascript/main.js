@@ -1,17 +1,33 @@
-
 import '../css/bootstrap.min.css'
+import '../css/font-awesome.min.css'
+import '../css/font.css'
 import '../css/style.css'
+// import { setupCounter } from './modules/counter'
 
-// import './common/modernizr.js'
-// import './common/jquery-1.11.1.min.js'
-// import './common/bootstrap.min.js'
-// // import './common/bootstrap-datepicker.js'
-// import './common/chosen.min.js'
-// import './common/bootstrap-checkbox.js'
-// import './common/nice-scroll.js'
-// import './common/jquery-browser.js'
+import {
+  createApp
+} from 'vue'
+import FooterSocialsApp from '../vue/FooterSocialsApp.vue'
 
-import './scripts.js'
+const rootSocialsElement = document.getElementById('socialsContainer'),
+footerSocialsApp = createApp(FooterSocialsApp, {
+  content: JSON.parse(rootSocialsElement.dataset.content)
+})
+footerSocialsApp.mount('#socialsContainer')
 
-import { setupCounter } from './modules/counter'
-setupCounter(document.querySelector('#counter'))
+const counter = document.querySelector('#counter')
+if (counter) {
+  import('./modules/counter.js').then((Module) => {
+    Module.setupCounter(counter)
+  })
+}
+
+
+console.log('test again.')
+
+// ToDo:
+// Use a dynamic module import DONE
+// Use a css module
+// Integrate Vue DONE
+// Use scss
+

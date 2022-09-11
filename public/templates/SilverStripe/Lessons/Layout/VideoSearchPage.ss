@@ -20,4 +20,7 @@
     </div>
     <% include Pagination %>
   </div>
+
+  <div id="counter"></div>
+
 </div>
