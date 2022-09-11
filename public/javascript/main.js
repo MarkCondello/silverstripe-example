@@ -1,12 +1,4 @@
-import '../css/bootstrap.min.css'
-import '../css/font-awesome.min.css'
-import '../css/font.css'
-import '../css/style.css'
-// import { setupCounter } from './modules/counter'
-
-import {
-  createApp
-} from 'vue'
+import { createApp } from 'vue'
 import FooterSocialsApp from '../vue/FooterSocialsApp.vue'
 
 const rootSocialsElement = document.getElementById('socialsContainer'),
@@ -22,12 +14,8 @@ if (counter) {
   })
 }
 
-
-console.log('test again.')
-
 // ToDo:
 // Use a dynamic module import DONE
-// Use a css module
 // Integrate Vue DONE
+// Use a css module
 // Use scss
-

@@ -7,7 +7,6 @@
     </li>
   </ul>
 </template>
-
 <script>
 export default {
   props: {
@@ -18,7 +17,7 @@ export default {
   },
   name: 'FooterSocials',
   created(){
-    console.log('Reached created FooterSocials.', this.content)
+    // console.log('Reached created FooterSocials.', this.content)
   }
 }
 </script>
