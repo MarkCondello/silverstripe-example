@@ -1,0 +1,42 @@
+// //Forms accordion
+//
+// .forms-accordion {
+// 	.accordion-content {
+// 		padding-bottom: 0;
+//
+// 		.content {
+// 			float: left;
+// 			margin-bottom: rem-calc(30);
+// 			@include breakpoint(medium) {
+// 				margin-bottom: rem-calc(50);
+// 			}
+// 			@include breakpoint(large) {
+// 				margin-bottom: rem-calc(70);
+// 			}
+//
+// 			h4 {
+// 				margin-bottom: rem-calc(10);
+// 			}
+// 		}
+// 	}
+//
+// 	p {
+// 		margin-bottom: rem-calc(25);
+// 		line-height: rem-calc(26);
+// 	}
+//
+// 	img {
+// 		margin-top: rem-calc(5);
+// 	}
+//
+// 	small {
+// 		float: left;
+// 		width: 100%;
+// 		margin-top: rem-calc(10);
+// 		@include breakpoint(large) {
+// 			float: none;
+// 			width: auto;
+// 			margin-left: rem-calc(20);
+// 		}
+// 	}
+// }

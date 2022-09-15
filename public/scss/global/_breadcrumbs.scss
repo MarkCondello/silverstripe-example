@@ -1,0 +1,46 @@
+.breadcrumbs {
+	margin-bottom: 20px;
+
+	ol {
+		display: inline-block;
+		margin-bottom: 0;
+	}
+
+	a {
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none !important;
+		}
+	}
+
+	li:not(:last-child):after {
+		content: '>';
+		color: $black;
+		margin-left: 6px;
+	}
+
+	.blogpost & {
+		margin-bottom: 5px;
+	}
+
+	.moneybanner & {
+		color: $white;
+		position: absolute;
+		left: 4%;
+		top: 30px;
+		max-width: 340px;
+
+		li {
+			color: $white;
+
+			&:not(:last-child):after {
+				color: $white;
+			}
+
+			a {
+				color: $white;
+			}
+		}
+	}
+}

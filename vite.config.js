@@ -16,7 +16,7 @@ export default defineConfig({
         assetsDir: 'build',
         manifest: true,
         rollupOptions: {
-            input: './public/javascript/main.js',
+            input: './main.js',
         },
     },
     // The vite server needs an unused port and should match that which is set in the siteconfig

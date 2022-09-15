@@ -1,0 +1,90 @@
+.reveal.site-popup-modal {
+	border-radius: 5px;
+	@include breakpoint(small only) {
+		width: calc(100% - 20px);
+		margin: 0 auto;
+		height: auto;
+		min-height: auto;
+	}
+
+	&:focus {
+		outline: -webkit-focus-ring-color auto 0;
+	}
+
+	.close-button-icon {
+		display: block;
+		width: 15px;
+		height: 15px;
+		margin: 0 auto 5px;
+		// svg {
+		// fill: $ocean-color;
+		// }
+	}
+
+	.close-button {
+		background: transparent;
+		font-size: 14px;
+		// color: $ocean-color;
+		right: 20px;
+		top: 20px;
+	}
+
+	.close-button:hover {
+		background: transparent;
+
+		.close-button-text {
+			b {
+				// @include underline-animation(1px, $ocean-color, 1px);
+			}
+		}
+	}
+
+	.close-button-text {
+		display: block;
+	}
+
+	.reveal-content {
+		padding: 60px 30px 40px;
+		@include breakpoint(large) {
+			padding: 60px 40px;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			// color: $ocean-color;
+		}
+
+		a:not(.button) {
+			color: $secondary-color;
+
+			&:hover {
+				@include underline-animation(1px, $secondary-color, 1px);
+			}
+		}
+
+		.button {
+			&.primary {
+				border: 0;
+				color: $white;
+				background-color: $secondary-color;
+				@include top-right-triangle($white);
+
+				&:hover {
+					background-color: scale-color($secondary-color, $lightness: -20%);
+				}
+			}
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+
+			.button {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+.loginpage {
+	section {
+		padding: 125px 0;
+		@include breakpoint(medium) {
+			padding: 140px 0;
+		}
+	}
+
+	#MemberLoginForm_LoginForm_action_doLogin {
+		background-color: $primary-color;
+		border: 0;
+		border-radius: $button-radius;
+		color: $white;
+		cursor: pointer;
+		font-size: 18px;
+		font-weight: $button-font-weight;
+		padding: $button-padding;
+		margin-bottom: 15px;
+
+		&:hover {
+			background-color: scale-color($primary-color, $lightness: -15%);
+		}
+	}
+
+	#ForgotPassword {
+		a {
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}

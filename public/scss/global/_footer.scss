@@ -1,0 +1,304 @@
+footer {
+	padding-bottom: 25px;
+}
+
+.footer {
+	border-top: 1px solid $black;
+	margin-top: 35px;
+	@include breakpoint(medium) {
+		display: flex;
+		flex-direction: row;
+		border-top-color: $primary-color;
+		border-bottom: 1px solid $black;
+		margin-top: 70px;
+		height: 142px;
+	}
+
+	&__logo {
+		width: 100%;
+		@include breakpoint(small only) {
+			text-align: center;
+			padding-top: 10px;
+			padding-bottom: 15px;
+		}
+		@include breakpoint(medium) {
+			background-color: $white;
+			display: flex;
+			align-items: center;
+			position: relative;
+			width: 260px;
+			padding-left: 15px;
+		}
+		@include breakpoint(large) {
+			width: 280px;
+		}
+		@include breakpoint(xlarge) {
+			padding-left: 30px;
+			width: 330px;
+		}
+		// Triangle top
+		&:before {
+			@include breakpoint(medium) {
+				display: block;
+				border-left: 80px solid transparent;
+				border-right: 80px solid transparent;
+				border-top: 70px solid $secondary-color;
+				content: '';
+				width: 0;
+				height: 0;
+				position: absolute;
+				right: -80px;
+				top: 0;
+				z-index: 2;
+			}
+		}
+
+		&:after {
+			@include breakpoint(medium) {
+				display: block;
+				content: '';
+				width: 0;
+				height: 0;
+				border-left: 80px solid transparent;
+				border-right: 80px solid transparent;
+				border-bottom: 70px solid $black;
+				position: absolute;
+				right: -80px;
+				bottom: 0;
+				z-index: 2;
+			}
+		}
+	}
+
+	&__content {
+		background-color: $primary-color;
+		position: relative;
+		@include breakpoint(small only) {
+			height: 380px;
+			padding-top: 30px;
+		}
+		@include breakpoint(medium) {
+			padding: 27px 15px 26px 0;
+			width: calc(100% - 260px);
+		}
+		@include breakpoint(large) {
+			display: flex;
+			flex-direction: column;
+			padding-top: 32px;
+			padding-bottom: 31px;
+			width: calc(100% - 280px);
+		}
+		@include breakpoint(xlarge) {
+			padding-right: 30px;
+			width: calc(100% - 330px);
+		}
+
+		&:after {
+			@include breakpoint(small only) {
+				display: block;
+				content: '';
+				background-image: linear-gradient(to right top, $black 0%, $black 50%, transparent 50%);
+				position: absolute;
+				height: 65%;
+				left: 0;
+				bottom: 0;
+				width: 50%;
+			}
+		}
+
+		&:before {
+			@include breakpoint(small only) {
+				display: block;
+				content: '';
+				background-image: linear-gradient(to left top, $secondary-color 0%, $secondary-color 50%, transparent 50%);
+				position: absolute;
+				height: 65%;
+				right: 0;
+				bottom: 0;
+				width: 50%;
+			}
+		}
+	}
+
+	.blogpost & {
+		margin-top: 0;
+	}
+}
+
+.footer__content--top {
+	position: relative;
+	width: 100%;
+	@include breakpoint(large) {
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 10px;
+		align-items: center;
+	}
+}
+
+.footer__content--bottom {
+	width: 100%;
+
+	a {
+		font-size: 13px;
+		color: $white;
+
+		&:hover {
+			color: $white;
+			text-decoration: underline;
+		}
+	}
+}
+
+.footer__nav {
+	text-align: center;
+	margin-bottom: 0;
+	@include breakpoint(medium only) {
+		margin-top: 15px;
+	}
+	@include breakpoint(large) {
+		text-align: right;
+	}
+
+	li {
+		margin-bottom: 5px;
+		@include breakpoint(medium) {
+			display: inline-block;
+			margin-right: 15px;
+			margin-bottom: 0;
+		}
+		@include breakpoint(large) {
+			margin-right: 1%;
+		}
+		@include breakpoint(xlarge) {
+			margin-right: 4%;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	a {
+		@include breakpoint(medium only) {
+			font-size: 13px;
+			color: $black;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.footer__social {
+	@include breakpoint(small only) {
+		justify-content: center;
+		margin-bottom: 24px;
+		text-align: center;
+	}
+	@include breakpoint(medium) {
+		margin-bottom: 0;
+	}
+	@include breakpoint(medium only) {
+		text-align: right;
+	}
+
+	li {
+		display: inline-block;
+		margin-right: 10px;
+		margin-bottom: 0;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.footer__phone {
+	@include breakpoint(small only) {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	@include breakpoint(medium down) {
+		width: 100%;
+	}
+	@include breakpoint(medium only) {
+		text-align: right;
+		margin-bottom: 10px;
+	}
+	@include breakpoint(large) {
+		margin-right: 20px;
+		display: flex;
+		justify-content: center;
+	}
+
+	a {
+		font-size: 28px;
+		font-weight: $global-weight-bold;
+		color: $white;
+
+		&:hover {
+			color: $white;
+
+			span {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	span {
+		display: inline-block;
+		margin-left: 10px;
+	}
+}
+
+.footer__details {
+	font-size: 13px;
+	margin-bottom: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.spark-green {
+	margin-bottom: 0;
+
+	a {
+		color: $black;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.footer__awardlogos {
+	@include breakpoint(small only) {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	ul {
+		margin-bottom: 0;
+
+		li {
+			padding: 1%;
+			display: inline-block;
+			@include breakpoint(medium) {
+				padding: 2% 1%;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.footerLogo {
+	width: 170px;
+	@include breakpoint(large) {
+		width: 200px;
+	}
+	@include breakpoint(xlarge) {
+		width: 228px;
+	}
+}

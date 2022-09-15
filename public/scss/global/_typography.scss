@@ -1,0 +1,277 @@
+.sub,
+.sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+.sub {
+	bottom: -0.25em;
+}
+
+.sup {
+	top: -0.5em;
+}
+
+h1 {
+	font-weight: $poppinslight;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: left;
+	// color: red!important
+}
+
+.introduction {
+	font-size: 17px;
+	line-height: 1.4;
+	@include breakpoint(large) {
+		font-size: 18px;
+	}
+}
+
+.button {
+	&.secondary {
+		background-color: transparent;
+
+		&:focus,
+		&:hover {
+			background-color: $primary-color;
+			color: $white;
+		}
+	}
+
+	&.small {
+		padding: 14px 24px;
+	}
+}
+
+.button--right {
+	@include breakpoint(large) {
+		float: right;
+	}
+}
+
+.small {
+	font-size: $small-font-size;
+}
+
+pre {
+	font-family: $body-font-family;
+	margin-bottom: $paragraph-margin-bottom;
+	line-height: $paragraph-lineheight;
+	white-space: pre-wrap;
+}
+
+blockquote {
+	margin: 30px 0;
+	padding: 0;
+
+	p {
+		color: $primary-color;
+		margin-bottom: 0;
+		font-size: 16px;
+		font-style: italic;
+		@include breakpoint(medium) {
+			font-size: 21px;
+		}
+	}
+}
+
+.button {
+	@include breakpoint(small only) {
+		font-size: 15px;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}
+
+.typography {
+	a:not(.button) {
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+// Image responsive
+
+img {
+	&.left,
+	&.right {
+		margin: rem-calc(10 30 20 30);
+	}
+
+	&.left {
+		float: left;
+		margin-left: 0;
+	}
+
+	&.right {
+		float: right;
+		margin-right: 0;
+	}
+
+	&.center {
+		display: block;
+		margin: auto;
+		width: auto;
+
+		&.image-100 {
+			width: 100%;
+			min-width: 100%;
+			margin: 10px 0 20px;
+		}
+
+		&.image-15,
+		&.image-25,
+		&.image-50 {
+			margin: 10px auto 20px;
+		}
+
+		&.image-50 {
+			width: 50%;
+		}
+	}
+
+	&.image-expanded {
+		width: 120%;
+		max-width: 120%;
+		margin: 20px -10%;
+		@include breakpoint(large) {
+			width: 140%;
+			max-width: 140%;
+			margin: 26px -20% 30px;
+		}
+	}
+
+	&.image-100 {
+		width: 100%;
+		margin: rem-calc(20 0);
+		min-width: 100%;
+		@include breakpoint(medium) {
+			margin: rem-calc(26 0 30 0);
+		}
+
+		&.left {
+			float: none;
+			@include breakpoint(medium) {
+				width: 100%;
+				min-width: 100%;
+				margin: 10px 0 20px;
+			}
+		}
+
+		&.right {
+			float: none;
+			@include breakpoint(medium) {
+				width: 100%;
+				min-width: 100%;
+				margin: 10px 0 20px;
+			}
+		}
+	}
+
+	&.image-66 {
+		width: 100%;
+		min-width: 100%;
+		margin: 10px 30px 20px;
+		@include breakpoint(medium) {
+			width: 66%;
+			min-width: 66%;
+		}
+
+		&.left {
+			margin-left: 0;
+		}
+
+		&.right {
+			margin-right: 0;
+		}
+	}
+
+	&.image-50 {
+		width: 50%;
+		min-width: 50%;
+		margin: 10px 30px 20px;
+
+		&.left {
+			margin-right: 15px;
+			@include breakpoint(medium) {
+				margin-right: 30px;
+				margin-left: 0;
+			}
+		}
+
+		&.right {
+			margin-left: 15px;
+			@include breakpoint(medium) {
+				margin-left: 30px;
+				margin-right: 0;
+			}
+		}
+
+		&.leftAlone {
+			display: block;
+			width: 50%;
+		}
+
+		&.rightAlone {
+			display: block;
+			width: 50%;
+			margin-left: 50%;
+		}
+	}
+
+	&.image-25 {
+		width: 50%;
+		min-width: 50%;
+		margin: 10px 30px 20px;
+		@include breakpoint(medium) {
+			width: 25%;
+			min-width: 25%;
+		}
+
+		&.left {
+			margin-left: 0;
+		}
+
+		&.right {
+			margin-right: 0;
+		}
+
+		&.leftAlone {
+			display: block;
+			width: 25%;
+			margin-left: 0;
+		}
+
+		&.rightAlone {
+			display: block;
+			width: 33%;
+			margin-left: 67%;
+			@include breakpoint(medium) {
+				width: 25%;
+				margin-left: 75%;
+			}
+		}
+	}
+}
+
+.flex-video,
+.responsive-embed {
+	padding-bottom: 56%;
+}
+
+.stickycontainer--offset .sticky {
+	@include breakpoint(large) {
+		padding-bottom: 30px;
+	}
+}

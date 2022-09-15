@@ -1,0 +1,220 @@
+.max-width {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.tabs {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+
+	.tabs-title {
+		border: 1px $primary-color solid;
+		border-bottom: 0;
+
+		&:nth-child(2) {
+			@include breakpoint(medium) {
+				border-left: 0;
+			}
+		}
+
+		&:last-child {
+			@include breakpoint(medium) {
+				border-left: 0;
+			}
+		}
+		@include breakpoint(small only) {
+			width: 100%;
+		}
+
+		> a {
+			@include breakpoint(medium down) {
+				padding: 14px 12px;
+				font-size: 14px;
+			}
+			@include breakpoint(large only) {
+				font-size: 15px;
+				padding: 14px 24px;
+			}
+
+			&:hover {
+				color: $white;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.tabs-panel {
+	padding-left: 0;
+	padding-right: 0;
+	@include breakpoint(medium down) {
+		padding: 30px 0;
+	}
+}
+
+.tabs-content {
+	margin-bottom: 25px;
+	@include breakpoint(large) {
+		margin-bottom: 50px;
+	}
+}
+
+.tabs-padding {
+	padding-left: 15px;
+	padding-right: 15px;
+	@include breakpoint(large) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+.tabs-container {
+	margin-top: 15px;
+	@include breakpoint(medium) {
+		position: relative;
+		margin-top: 30px;
+	}
+	@include breakpoint(small only) {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
+
+.tabsOptions {
+	@include breakpoint(small only) {
+		margin-bottom: 20px;
+	}
+	@include breakpoint(medium) {
+		position: absolute;
+		top: 6px;
+		right: 15px;
+	}
+	@include breakpoint(large) {
+		right: 30px;
+		top: 12px;
+	}
+
+	ul {
+		margin: 0;
+		@include breakpoint(small only) {
+			margin-right: 10px;
+		}
+
+		li {
+			margin-right: 8px;
+			@include breakpoint(large) {
+				margin-right: 16px;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.label_radio {
+		color: $black;
+		font-weight: $global-weight-normal;
+		@include breakpoint(small only) {
+			font-size: 14px;
+		}
+		@include breakpoint(medium only) {
+			font-size: 1.2vmax;
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.inv-input--styling,
+.inv-input--styling[readonly] {
+	border-color: $primary-color;
+	background-color: $white;
+	box-shadow: none;
+	color: $primary-color;
+	display: inline-block;
+	margin-bottom: 0;
+
+	&:focus {
+		border-color: $primary-color;
+	}
+}
+// Highchart styling
+
+#js-performance-chart {
+	height: 430px;
+	margin-bottom: 5px;
+}
+
+.highcharts-legend-item {
+	span,
+	text {
+		font-family: $body-font-family !important;
+		font-weight: normal !important;
+		font-size: 13px !important;
+		cursor: pointer;
+	}
+}
+
+.highchart {
+	.highcharts-background {
+		stroke-width: 0;
+	}
+
+	.highcharts-plot-background {
+		fill: #F6F6F6;
+	}
+
+	.highcharts-axis-labels,
+	.highcharts-axis-title {
+		font-family: $body-font-family;
+		font-weight: $global-weight-bold;
+	}
+
+	.highcharts-axis-title {
+		font-family: $body-font-family;
+		font-size: 14px;
+		fill: $black !important;
+		color: $black !important;
+	}
+
+	.highcharts-axis-labels {
+		text {
+			font-family: $body-font-family;
+			color: $black !important;
+			font-size: 13px !important;
+		}
+	}
+
+	.highcharts-tooltip {
+		.investmentperformancecomparisonpage & {
+			&-title {
+				color: $black;
+				margin-bottom: 5px;
+			}
+		}
+
+		&-title {
+			font-family: $body-font-family;
+			color: $white;
+			text-align: center;
+			font-size: 13px;
+			font-weight: $global-weight-normal;
+		}
+
+		table {
+			font-family: $body-font-family;
+			// font-weight: $global-weight-bold;
+			margin-bottom: 0 !important;
+
+			td {
+				color: $white;
+				padding: 2px 7px;
+				font-size: 12px;
+			}
+		}
+	}
+}

@@ -1,0 +1,263 @@
+// rotate
+@mixin rotate($degrees) {
+   -webkit-transform: rotate($degrees);
+   -moz-transform: rotate($degrees);
+   -ms-transform: rotate($degrees);
+   -o-transform: rotate($degrees);
+   transform: rotate($degrees);
+}
+// Border radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+// Underline tranistion
+@mixin underline-animation ($padding-value, $border-color-value, $border-value) {
+    padding-bottom: $padding-value;
+    border: 0px;
+    border-bottom: $border-value;
+    border-style: solid;
+    border-color: $border-color-value;
+}
+// Placeholder
+@mixin placeholder($color) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        text-overflow: ellipsis;
+    }
+    &:-moz-placeholder {
+        color: $color;
+        opacity: 1;
+        text-overflow: ellipsis;
+    }
+    &::-moz-placeholder {
+        color: $color;
+        opacity: 1;
+        text-overflow: ellipsis;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+        text-overflow: ellipsis;
+    }
+}
+// Box shadow
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+// Transition
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
+@mixin top-right-triangle($color) {
+  $size: rem-calc(10);
+
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    height: 0;
+    width: 0;
+    top: 0;
+    right: 0;
+    border-color: transparent $color transparent transparent;
+    border-style: solid;
+    border-width: 0 $size $size 0;
+  }
+}
+
+@mixin colorize-top-right-corners($color) {
+  table.table,
+  table.table-fixed-column
+  {
+    thead {
+      &:before {
+        border-right-color: $color;
+      }
+    }
+  }
+
+  a.button, button.button, input.button, input.action {
+    &:before {
+      border-right-color: $color;
+    }
+  }
+}
+
+// Triangle with border
+// More info: http://codepen.io/vieron/pen/xuHDA
+@mixin triangle($size, $color, $direction) {
+    height: 0;
+    width: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: $size / 2;
+
+    @if $direction == up {
+      border-bottom-color: $color;
+    } @else if $direction == right {
+      border-left-color:   $color;
+
+    } @else if $direction == down {
+      border-top-color:    $color;
+
+    } @else if $direction == left {
+      border-right-color:  $color;
+    }
+}
+@mixin bordered-triangle($size, $border-width, $color, $border-color, $direction, $alt: false) {
+  $back-size: $size + ($border-width * 2);
+  position: relative;
+
+  min-width: $size;
+  min-height: $size;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+  }
+
+  &:after {
+     @include triangle($size, $color, $direction);
+  }
+
+  &:before {
+    @include triangle($back-size, $border-color, $direction);
+    $mid-border-width: ($border-width / 2);
+    $border-width-and-mid: $border-width + $mid-border-width;
+
+    @if ($alt == true) {
+      $mid-border-width: 0;
+      $border-width-and-mid: $border-width * 2;
+    }
+
+    @if ($direction == up) or ($direction == down) {
+      margin-left: - $border-width;
+
+      @if ($direction == down) {
+        margin-top: -$mid-border-width;
+      } @else {
+        margin-top: - $border-width-and-mid;
+      }
+
+    } @else if ($direction == right) or ($direction == left) {
+      margin-top: - $border-width;
+
+      @if ($direction == right) {
+        margin-left: - $mid-border-width;
+      } @else {
+        margin-left: - $border-width-and-mid;
+      }
+    }
+  }
+}
+
+@mixin plugs($container: 840px, $columnWidth: 33.333333%, ) {
+  &__columns {
+		max-width: $container; // variable
+		width: 100%;
+		@include breakpoint(large) {
+			display: flex;
+      align-items: flex-start;
+		}
+	}
+	&__col {
+		@include breakpoint(medium down) {
+			width: 100%;
+			padding-bottom: 30px;
+			margin-bottom: 30px;
+			border-bottom: 1px solid $secondary-color;
+		}
+		@include breakpoint(large) {
+			width: $columnWidth; // variable
+		}
+    @include breakpoint(medium down) {
+      > div {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+	&__icon {
+		margin-right: 20px;
+		@include breakpoint(medium down) {
+			width: 40px;
+		}
+		@include breakpoint(large) {
+			margin-bottom: 20px;
+			max-width: 74px;
+      picture,
+      img {
+        height: 74px;
+      }
+		}
+	}
+	&__subtitle {
+		color: $secondary-color;
+		font-weight: $poppinslight;
+		line-height: 1.2;
+		font-size: 24px;
+		@include breakpoint(large) {
+			border-top: 1px solid $secondary-color;
+			border-bottom: 1px solid $secondary-color;
+			font-size: 30px;
+			padding: 28px 0;
+		}
+		@include breakpoint(xlarge) {
+			font-size: 36px;
+		}
+	}
+	&__copy {
+		color: $white;
+		font-size: 15px;
+		@include breakpoint(medium down) {
+			padding-top: 20px;
+		}
+		@include breakpoint(large) {
+			padding-top: 30px;
+			padding-right: 10%;
+		}
+	}
+}

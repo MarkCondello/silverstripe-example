@@ -1,0 +1,490 @@
+// body {
+// 	&:after {
+// 		content: 'small';
+// 		display: block;
+// 		background-color: $primary-color;
+// 		position: fixed;
+// 		z-index: 999;
+// 		top: 0;
+// 		left: 0;
+// 		color: $white;
+// 		@include breakpoint(medium) {
+// 			content: 'medium';
+// 		}
+// 		@include breakpoint(large) {
+// 			content: 'large';
+// 		}
+// 		@include breakpoint(xlarge) {
+// 			content: 'xlarge';
+// 		}
+// 		@include breakpoint(xxlarge) {
+// 			content: 'xxlarge';
+// 		}
+// 	}
+// }
+
+header .is-drilldown {
+	max-width: 100% !important;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	z-index: 100;
+
+	.menu-open & {
+		@include breakpoint(medium down) {
+			position: absolute;
+		}
+	}
+
+	.shrink {
+		@include breakpoint(large) {
+			margin-top: -46px;
+			@include transition(margin-top 150ms ease-in);
+		}
+	}
+}
+
+.flex {
+	@include breakpoint(large) {
+		@include flex;
+	}
+}
+
+.custom-large-logo {
+	@include breakpoint(medium down) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-left: 20px;
+		padding-right: 20px;
+		height: 56px;
+		box-shadow: 0 10px 10px 0 rgba(0,0,0,0.25);
+		background-color: $white;
+	}
+	@include breakpoint(large) {
+		width: 160px;
+	}
+	@include breakpoint(xlarge) {
+		width: 190px;
+	}
+
+	img {
+		@include breakpoint(medium down) {
+			max-width: 86px;
+		}
+	}
+}
+
+.custom-large-navigation {
+	@include breakpoint(large) {
+		width: calc(100% - 160px - 20%);
+	}
+	@include breakpoint(xlarge) {
+		width: calc(100% - 200px - 20%);
+	}
+}
+
+.custom-large-button {
+	@include breakpoint(large) {
+		width: 24%;
+	}
+	@include breakpoint(xlarge) {
+		width: 20%;
+	}
+}
+// Search field
+
+input[type='text'] {
+	header & {
+		box-shadow: none;
+		color: $white;
+		background: $white url("../img/icon-header-search-mobile.svg") 18px 16px no-repeat;
+		background-size: 18px 18px;
+		font-size: 16px;
+		height: auto;
+		@include breakpoint(medium down) {
+			border: 1px solid $white;
+			border-radius: 0;
+			padding: 14px 14px 14px 44px;
+			border-bottom: 1px solid $primary-color;
+		}
+		@include breakpoint(large) {
+			background: transparent url("../img/icon-header-search.svg") 8px 5px no-repeat;
+			background-size: 18px 18px;
+			border-color: $white;
+			border-radius: 15px;
+			font-size: 14px;
+			padding: 3px 10px 3px 34px;
+			margin-bottom: 0;
+			width: 120px;
+			float: right;
+			@include transition(width 50ms ease-out);
+		}
+		@include breakpoint(xlarge) {
+			font-size: 15px;
+			width: 160px;
+		}
+
+		&:focus {
+			border-color: $white;
+			color: $black;
+			@include breakpoint(medium down) {
+				border-bottom: 1px solid $primary-color;
+			}
+			@include breakpoint(large) {
+				color: $white;
+				background-color: transparent;
+				width: 130%;
+				@include transition(width 50ms ease-in);
+			}
+		}
+
+		&::placeholder {
+			color: $primary-color;
+			@include breakpoint(large) {
+				color: $white;
+			}
+		}
+	}
+}
+
+.header__button {
+	border: 1px solid $secondary-color;
+	background-color: $secondary-color;
+	border-radius: 46px;
+	color: $black;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: $global-weight-bold;
+	text-align: center;
+	padding: 9px;
+	width: 106px;
+	@include breakpoint(large) {
+		font-size: 13px;
+	}
+	@include breakpoint(xlarge) {
+		font-size: 15px;
+		width: 116px;
+	}
+
+	&:hover {
+		border-color: $primary-color;
+		background-color: $primary-color;
+		color: $white;
+	}
+
+	&--outline {
+		color: $black;
+		border-width: 2px;
+		background-color: $white;
+	}
+}
+
+.top-menu {
+	background-color: $primary-color;
+	position: relative;
+	margin-top: 0;
+	width: 100%;
+	@include breakpoint(large) {
+		@include transition(margin-top 150ms ease-out);
+		display: flex;
+		@include flex-align(left, middle);
+		justify-content: space-between;
+		padding-left: calc(160px - 15px);
+		padding-right: 15px;
+	}
+	@include breakpoint(xlarge) {
+		padding-left: calc(200px + 6px);
+	}
+
+	.menu {
+		@include breakpoint(large) {
+			@include flex-align(center, middle);
+			@include transition(height 250ms ease-in);
+			width: 75%;
+		}
+	}
+
+	.menu > li {
+		margin-right: 1%;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		> a {
+			color: $white;
+			padding: 14px 12px 18px;
+			position: relative;
+			@include breakpoint(large) {
+				font-size: 14px;
+				text-align: center;
+			}
+
+			&:focus,
+			&:hover {
+				background-color: scale-color($drilldown-background, $lightness: -25%);
+			}
+
+			&.active {
+				font-weight: $global-weight-bold;
+
+				&:after {
+					content: '';
+					display: block;
+					width: 0;
+					height: 0;
+					border-left: 12px solid transparent;
+					border-right: 12px solid transparent;
+					border-bottom: 13px solid $white;
+					@include horizontal-center;
+					bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+.secondary-menu {
+	@include breakpoint(large) {
+		border-bottom: 1px solid $primary-color;
+		background-color: $white;
+		height: 83px;
+		padding: 0 15px 0 16px;
+		@include flex-align(left, middle);
+	}
+	@include breakpoint(xlarge) {
+		padding-left: 24px;
+	}
+}
+
+.parent-sub {
+	> li {
+		@include breakpoint(large) {
+			font-size: 13px;
+			margin-right: 1vw;
+		}
+		@include breakpoint(xlarge) {
+			font-size: 15px;
+			margin-right: 2vw;
+		}
+
+		> a:hover {
+			color: $secondary-color;
+		}
+	}
+
+	li:not(.drilldown-overview) a:not(.drilldown-back) {
+		@include breakpoint(medium down) {
+			border-bottom: 1px solid $white;
+			color: $white;
+			padding-right: 24px;
+			@include breakpoint(large) {
+				font-size: 13px;
+			}
+			@include breakpoint(xlarge) {
+				font-size: 15px;
+			}
+
+			&:hover {
+				background-color: scale-color($drilldown-background, $lightness: -25%);
+			}
+		}
+	}
+
+	li:not(.drilldown-overview) > .menu-has-children:not(.drilldown-back) {
+		@include breakpoint(medium down) {
+			background: $drilldown-background url("../img/icon-dd-child-arrow-hover.svg") 98% center no-repeat;
+			background-size: 20px 20px;
+		}
+	}
+
+	li:not(.drilldown-overview) {
+		&.is-dropdown-submenu-parent:not(.is-dropdown-submenu-item) > a {
+			@include breakpoint(large) {
+				padding-right: 24px;
+				background: url("../img/icon-dd-arrow.svg") right center no-repeat;
+				background-size: 20px 20px;
+				font-size: 13px;
+			}
+			@include breakpoint(xlarge) {
+				font-size: 15px;
+			}
+
+			&:hover {
+				@include breakpoint(large) {
+					background: url("../img/icon-dd-arrow-hover.svg") right center no-repeat;
+					background-size: 20px 20px;
+				}
+			}
+		}
+
+		&.is-dropdown-submenu-parent:not(.is-dropdown-submenu-item).is-active > a {
+			@include breakpoint(large) {
+				color: $secondary-color;
+				background: url("../img/icon-dd-arrow-hover.svg") right center no-repeat;
+				background-size: 20px 20px;
+			}
+		}
+	}
+}
+
+.submenu {
+	@include breakpoint(medium down) {
+		background-color: $white;
+	}
+	@include breakpoint(large) {
+		box-shadow: 0 10px 10px 0 rgba(0,0,0,0.25);
+	}
+
+	li > a:not(.drilldown-back) {
+		@include breakpoint(large) {
+			font-size: 13px;
+			padding-top: 14px;
+			padding-bottom: 12px;
+			line-height: 1.2;
+		}
+		@include breakpoint(xlarge) {
+			font-size: 15px;
+		}
+
+		&:hover {
+			background-color: $primary-color;
+			color: $white;
+		}
+	}
+
+	.is-dropdown-submenu-parent {
+		@include breakpoint(large) {
+			background: url("../img/icon-dd-child-arrow.svg") 95% center no-repeat;
+			background-size: 20px 20px;
+		}
+	}
+
+	&.menu li.is-active > a {
+		@include breakpoint(large) {
+			background: $primary-color url("../img/icon-dd-child-arrow-hover.svg") 95% center no-repeat;
+			background-size: 20px 20px;
+			color: $white;
+		}
+	}
+}
+
+.js-drilldown-back a {
+	background: $secondary-color url("../img/icon-dd-back-arrow.svg") 10px center no-repeat;
+	background-size: 20px 20px;
+	border-bottom: 1px solid $white;
+	color: $black;
+	font-size: 15px;
+	padding-left: 38px !important;
+
+	&:hover {
+		background-color: scale-color($secondary-color, $lightness: -15%);
+	}
+}
+
+.login-button {
+	margin-right: 24px;
+
+	button {
+		border-radius: 0;
+		cursor: pointer;
+		color: $primary-color;
+		font-size: 11px;
+		// font-weight: $global-weight-bold;
+		text-align: center;
+		height: 42px;
+
+		img {
+			margin: 0 auto 6px;
+		}
+
+		span {
+			display: block;
+		}
+	}
+}
+
+.menu-icon {
+	width: 28px;
+	height: 22px;
+
+	&::after,
+	&::before {
+		content: '';
+		position: absolute;
+		display: block;
+		width: 100%;
+		top: 0;
+		left: 0;
+		height: 1px;
+	}
+
+	&::before {
+		display: none;
+	}
+
+	&.open {
+		&::after,
+		&::before {
+			top: 10px;
+			box-shadow: none;
+		}
+
+		&::before {
+			display: block;
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+.menu-icon {
+	&::after,
+	&::before {
+		background: $primary-color;
+		box-shadow: 0 8px 0 $primary-color, 0 16px 0 $primary-color;
+	}
+
+	&:not(.open):hover::after {
+		box-shadow: 0 8px 0 $primary-color, 0 16px 0 $primary-color;
+	}
+
+	&.open {
+		&::before {
+			background: $primary-color;
+		}
+
+		&::after {
+			background: $primary-color;
+		}
+	}
+}
+
+.menu-button {
+	color: $primary-color;
+	font-size: 11px;
+	text-align: center;
+	margin-top: 4px;
+
+	> div {
+		margin-top: 1px;
+	}
+}
+
+.mobile-online-nav {
+	background-color: #e6e6e6;
+
+	h4 {
+		font-size: 16px;
+		padding-top: 14px;
+		padding-bottom: 14px;
+		text-indent: 17px;
+		margin-bottom: 0;
+	}
+}

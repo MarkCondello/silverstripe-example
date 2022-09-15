@@ -1,0 +1,44 @@
+.pika-single {
+	font-family: $body-font-family;
+	color: $body-font-color;
+}
+
+.pika-label {
+	padding-right: 20px;
+}
+
+.pika-table th {
+	color: $white;
+	font-weight: $poppinslight;
+}
+
+.pika-label {
+	color: $primary-color;
+}
+
+.pika-button {
+	border-radius: 0;
+
+	&:hover {
+		background-color: $primary-color;
+		border-radius: 0;
+	}
+}
+
+.is-selected .pika-button {
+	background-color: $primary-color;
+	border-radius: 0;
+	box-shadow: none;
+	color: $white;
+	font-weight: $global-weight-normal;
+}
+
+.is-today .pika-button {
+	color: $primary-color;
+}
+
+.is-today:hover .pika-button {
+	color: $white;
+	text-decoration: underline;
+	background-color: $primary-color;
+}

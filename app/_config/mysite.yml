@@ -23,6 +23,6 @@ ViteHelper\Vite\ViteHelper:
   forceProductionMode: false
   devHostNeedle: '8890'
   devPort: 8891
-  jsSrcDirectory: 'public/javascript/'
+  jsSrcDirectory: './'
   mainJS: 'main.js'
   manifestDir: '/public/manifest.json'

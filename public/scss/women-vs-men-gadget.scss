@@ -1,0 +1,685 @@
+/*
+To Do
+*/
+// @charset 'utf-8';
+
+  @import './global/settings';
+
+// @import "foundation";
+@import "../../node_modules/foundation-sites/scss/foundation.scss";
+@import './global/mixins';
+
+@include foundation-everything(true);
+// @import 'motion-ui';
+// @include foundation-global-styles;
+// @include foundation-typography;
+// @include foundation-forms;
+// @include foundation-grid;
+// @include foundation-close-button;
+// @include foundation-callout;
+// @include foundation-label;
+// @include foundation-dropdown;
+// @include foundation-tooltip;
+// @include foundation-media-object;
+// @include foundation-responsive-embed;
+// @include foundation-tabs;
+// @include foundation-menu;
+// @include foundation-menu-icon;
+// @include foundation-drilldown-menu;
+// @include foundation-dropdown-menu;
+// @include foundation-reveal;
+// @include foundation-sticky;
+// @include foundation-title-bar;
+// @include foundation-top-bar;
+// @include foundation-float-classes;
+// @include foundation-flex-classes;
+// @include foundation-visibility-classes;
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
+@import './global/mixins';
+@import './global/error';
+@import './global/header';
+@import './global/breadcrumbs';
+@import './global/footer';
+@import './global/forms';
+@import './global/login';
+@import './global/modal';
+@import 'global/table';
+@import 'global/typography';
+
+// @import 'components/generalclasses';
+// @import 'components/multi-select';
+
+.relative {
+	position: relative;
+}
+
+.flex--align-center {
+	display: flex;
+	align-items: center;
+}
+
+.float--left {
+	@include breakpoint(large) {
+		float: left;
+	}
+}
+
+.gadget-women-v-men {
+	.row .row {
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+	padding-left: rem-calc(15);
+	padding-right: rem-calc(15);
+
+	&.tile {
+		display: block;
+		margin-bottom: rem-calc(30);
+	}
+
+	&.home {
+		margin-bottom: rem-calc(40);
+
+		.gadget-wvm__copy-alignment {
+			@include breakpoint(large) {
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+}
+
+.gadget-wvm--shadow {
+	filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.3));
+}
+
+.gadget-women-v-men__content {
+	align-items: center;
+	background-color: $secondary-color;
+	display: flex;
+	padding: rem-calc(20 20 60);
+
+	.home & {
+		@include breakpoint(large) {
+			padding: 20px 14vw 20px 40px;
+			min-height: rem-calc(220);
+		}
+		@include breakpoint(xlarge) {
+			padding: 20px 30% 30px 60px;
+		}
+	}
+
+	h3 {
+		color: $black;
+		margin-bottom: rem-calc(10);
+		font-size: rem-calc(24);
+
+		.home & {
+			font-size: rem-calc(18);
+			@include breakpoint(medium) {
+				font-size: rem-calc(24);
+			}
+			@include breakpoint(large) {
+				font-size: 2vw;
+			}
+			@include breakpoint(xlarge) {
+				font-size: rem-calc(28);
+			}
+		}
+	}
+
+	p {
+		margin-bottom: 0;
+		line-height: 1.6;
+		font-size: rem-calc(14);
+		@include breakpoint(medium) {
+			font-size: rem-calc(16);
+		}
+
+		.home & {
+			@include breakpoint(xlarge) {
+				font-size: rem-calc(17);
+			}
+		}
+	}
+}
+
+.gadget-women-v-men__image {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	// very cool ration box code
+	&::before {
+		content: "";
+		width: 1px;
+		margin-left: -1px;
+		float: left;
+		height: 0;
+		padding-top: 42%;
+		@include breakpoint(large) {
+			padding-top: 46%;
+		}
+	}
+
+	&::after {
+		/* to clear float */
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.gadget-women-v-men__input-container {
+	.home & {
+		@include breakpoint(large) {
+			margin-bottom: rem-calc(90);
+		}
+	}
+}
+
+.gadget-women-v-men--padding {
+	background-color: $white;
+	padding: rem-calc(20 30);
+	@include breakpoint(large) {
+		padding: rem-calc(20 18 20 30);
+		margin-right: rem-calc(22);
+	}
+	@include breakpoint(xlarge) {
+		padding: rem-calc(25 18 25 40);
+	}
+
+	.tactical-tile & {
+		margin-right: 0;
+		padding: rem-calc(20);
+	}
+}
+
+.gadget-women-v-men--input {
+	position: relative;
+	top: -40px;
+	z-index: 1;
+	min-height: rem-calc(132);
+	max-width: rem-calc(450);
+
+	.home & {
+		@include breakpoint(large) {
+			margin-top: -30px;
+			width: rem-calc(320);
+			position: absolute;
+			left: 45%;
+			bottom: -50px;
+		}
+		@include breakpoint(xlarge) {
+			left: 49%;
+			width: rem-calc(370);
+		}
+	}
+
+	h3 {
+		color: $primary-color;
+		margin-bottom: rem-calc(10);
+		font-size: rem-calc(22);
+
+		.home & {
+			font-size: rem-calc(20);
+			@include breakpoint(medium) {
+				font-size: rem-calc(22);
+			}
+			@include breakpoint(xlarge) {
+				font-size: rem-calc(26);
+			}
+		}
+	}
+
+	input[type='number'],
+	button {
+		float: left;
+		margin: 0;
+	}
+
+	input[type='number'] {
+		border: 1px $black solid;
+		border-top-left-radius: 50px;
+		border-bottom-left-radius: 50px;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		border-right: 0;
+		background-color: $white;
+		padding-left: rem-calc(15);
+		height: rem-calc(50);
+		line-height: rem-calc(50);
+		width: 45%;
+		-moz-appearance: textfield;
+		@include breakpoint(medium) {
+			border-top-left-radius: 52px;
+			border-bottom-left-radius: 52px;
+			height: rem-calc(52);
+			line-height: rem-calc(52);
+		}
+		@include breakpoint(large) {
+			border-top-left-radius: 54px;
+			border-bottom-left-radius: 54px;
+			width: rem-calc(100);
+			height: rem-calc(54);
+			line-height: rem-calc(54);
+		}
+		@include breakpoint(xlarge) {
+			width: rem-calc(130);
+		}
+
+		&:focus {
+			border-color: $secondary-color;
+		}
+
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		.tactical-tile & {
+			@include breakpoint(large only) {
+				border-right: 1px $black solid;
+				border-top-right-radius: 52px;
+				border-bottom-right-radius: 52px;
+				width: 99%;
+
+				&:focus {
+					border-color: $secondary-color;
+				}
+			}
+		}
+	}
+	@keyframes animatedBackground {
+		from {
+			background-position: 82% 50%;
+		}
+
+		to {
+			background-position: 88% 50%;
+		}
+	}
+
+	button {
+		background: $primary-color url(../img/women-vs-men/wvm-button-arrow.svg) no-repeat;
+		background-size: inherit;
+		border-top-left-radius: 54px;
+		border-bottom-left-radius: 54px;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		text-align: left;
+		padding-right: 15px;
+		padding-left: 15px;
+		position: relative;
+		width: 55% !important;
+		margin: 0 !important;
+		animation: animatedBackground 850ms ease-in-out infinite alternate;
+		@include breakpoint(small only) {
+			padding-top: 14px;
+			padding-bottom: 14px;
+		}
+		@include breakpoint(large) {
+			width: calc(100% - 100px)!important;
+			min-height: rem-calc(54);
+		}
+		@include breakpoint(xlarge) {
+			width: calc(100% - 140px)!important;
+			padding-left: rem-calc(25);
+			padding-right: rem-calc(25);
+		}
+
+		&:focus,
+		&:hover {
+			background-color: scale-color($primary-color, $lightness: -18%);
+		}
+
+		.tactical-tile & {
+			@include breakpoint(small only) {
+				padding-top: 16px;
+				padding-bottom: 15px;
+			}
+			@include breakpoint(large only) {
+				border-top-left-radius: 54px;
+				border-bottom-left-radius: 54px;
+				margin-top: 15px !important;
+				width: 99% !important;
+			}
+		}
+
+		.tile & {
+			font-size: rem-calc(18);
+			@include breakpoint(large) {
+				padding: 15px;
+			}
+		}
+	}
+}
+
+.gadget-wvm__input-triangle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 22px;
+	background: url("../img/user-type/icon-campaign-content-triangle.svg") top right no-repeat;
+}
+
+.gadget-women-v-men__results {
+	margin-bottom: rem-calc(45);
+	@include breakpoint(large) {
+		margin-bottom: rem-calc(90);
+	}
+}
+
+.gadget-wvm__copy-block {
+	background-color: $secondary-color;
+	width: 100%;
+
+	.home & {
+		@include breakpoint(large) {
+			width: 65%;
+			padding-top: rem-calc(20);
+			padding-bottom: rem-calc(20);
+		}
+		@include breakpoint(xlarge) {
+			width: calc(100% - 470px);
+		}
+	}
+
+	.shortcode-content & {
+		@include breakpoint(large only) {
+			padding-bottom: rem-calc(30);
+		}
+	}
+}
+
+.gadget-wvm__title {
+	div {
+		padding: rem-calc(30 30 0);
+		font-size: rem-calc(18);
+		text-align: center;
+		width: 100%;
+		font-size: rem-calc(20);
+		@include breakpoint(small only) {
+			margin-bottom: 15px;
+		}
+		@include breakpoint(large) {
+			font-size: 1.8vw;
+		}
+		@include breakpoint(xlarge) {
+			font-size: rem-calc(26);
+		}
+
+		.tile & {
+			padding-top: rem-calc(20);
+			margin-bottom: rem-calc(20);
+		}
+
+		.tactical-tile & {
+			font-size: rem-calc(18);
+		}
+
+		.home & {
+			padding: rem-calc(30 30 10);
+			@include breakpoint(large) {
+				text-align: left;
+				padding: 0 0 0 rem-calc(20);
+			}
+			@include breakpoint(xlarge) {
+				padding-left: rem-calc(30);
+			}
+		}
+	}
+}
+
+.gadget-wvm__number {
+	font-size: rem-calc(18);
+	margin-top: rem-calc(5);
+	@include breakpoint(xlarge) {
+		padding-bottom: rem-calc(20);
+	}
+
+	.tactical-tile & {
+		padding-bottom: 0;
+	}
+
+	.home & {
+		padding-bottom: 0;
+		@include breakpoint(large) {
+			font-size: rem-calc(18);
+		}
+	}
+}
+
+.gadget-wvm__icons--title {
+	font-size: rem-calc(18);
+	line-height: 1.4;
+	@include breakpoint(large) {
+		font-size: rem-calc(22);
+	}
+	@include breakpoint(small only) {
+		padding: rem-calc(15 30 50);
+	}
+
+	.home & {
+		@include breakpoint(medium) {
+			font-size: rem-calc(22);
+		}
+	}
+
+	.home &,
+	.tile & {
+		text-align: center;
+		@include breakpoint(medium) {
+			text-align: left;
+		}
+	}
+
+	.tactical-tile & {
+		font-size: rem-calc(18);
+		@include breakpoint(small only) {
+			padding-bottom: 25px;
+		}
+		@include breakpoint(large) {
+			margin-bottom: 30px;
+		}
+	}
+
+	b {
+		font-size: rem-calc(20);
+		text-decoration: underline;
+		@include breakpoint(xlarge) {
+			font-size: rem-calc(24);
+		}
+
+		.tactical-tile & {
+			font-size: rem-calc(18);
+		}
+	}
+}
+
+.gadget-wvm__callout-block {
+	width: 100%;
+
+	.tile & {
+		margin-top: -30px;
+		@include breakpoint(medium down) {
+			width: 90%;
+			margin: -30px auto 0;
+		}
+	}
+
+	.home & {
+		width: 90%;
+		margin: 0 auto;
+		@include breakpoint(medium down) {
+			margin-top: -30px;
+		}
+		@include breakpoint(medium) {
+			width: 75%;
+		}
+		@include breakpoint(large) {
+			width: 35%;
+			min-height: 240px;
+		}
+		@include breakpoint(xlarge) {
+			width: rem-calc(470);
+		}
+	}
+
+	&--padding {
+		padding: rem-calc(20 30);
+
+		.home & {
+			@include breakpoint(large) {
+				padding: rem-calc(30) rem-calc(8) rem-calc(30) rem-calc(30);
+				margin-right: rem-calc(22);
+			}
+			@include breakpoint(xlarge) {
+				padding: rem-calc(40 30);
+			}
+		}
+	}
+}
+
+.gadget-wvm__callout-copy {
+	background-color: $white;
+	font-size: rem-calc(15);
+	@include breakpoint(large) {
+		font-size: rem-calc(16);
+	}
+
+	.primary {
+		padding-left: rem-calc(25);
+		padding-right: rem-calc(25);
+	}
+}
+
+.gadget-wvm__button-group {
+	margin-top: rem-calc(20);
+	margin-left: auto !important;
+	margin-right: auto !important;
+
+	.home & {
+		@include breakpoint(xlarge) {
+			margin-top: rem-calc(30);
+		}
+	}
+
+	button {
+		width: 100%;
+
+		&.white {
+			border-color: $white;
+			color: $primary-color;
+			font-weight: $poppinslight;
+			text-decoration: underline;
+			margin-bottom: 0;
+
+			&:focus,
+			&:hover {
+				background-color: $white;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.gadget-wvm__icons {
+	.tactical-tile & {
+		margin: 20px 0;
+	}
+}
+
+.gadget-wvm__icon {
+	background-color: $white;
+	border-radius: 103px;
+	height: 103px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	width: 103px;
+
+	img {
+		position: relative;
+		z-index: 2;
+		bottom: -12%;
+	}
+}
+
+.gadget-wvm__icon-bar {
+	position: absolute;
+	background-color: $black;
+	bottom: 0;
+	height: 0;
+	width: 100%;
+	@include transition(height 500ms ease-in-out);
+}
+
+.gadget-wvm__column {
+	&--women {
+		width: 50%;
+		@include breakpoint(medium) {
+			width: 24%;
+		}
+	}
+
+	&--men {
+		width: 50%;
+		@include breakpoint(medium) {
+			width: 24%;
+		}
+	}
+
+	&--copy {
+		width: 48%;
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+}
+
+.gadget-wvm__icons {
+	.tile & {
+		@include breakpoint(medium) {
+			padding-bottom: rem-calc(30);
+		}
+	}
+
+	&--maxwidth {
+		@include breakpoint(small only) {
+			max-width: rem-calc(320) !important;
+			margin: 0 auto !important;
+		}
+		@include breakpoint(medium only) {
+			max-width: rem-calc(600) !important;
+			margin: 0 auto !important;
+
+			.home & {
+				padding-bottom: rem-calc(50);
+			}
+
+			.tile & {
+				padding-top: 15px;
+				padding-bottom: 25px;
+			}
+		}
+	}
+}
+// * Mean superannuation balances disclaimer
+
+.calloutByline {
+	margin-top: rem-calc(20);
+	font-size: rem-calc(12);
+	margin-right: rem-calc(30);
+
+	.member-region & {
+		a {
+			// color: $secondary-color;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}

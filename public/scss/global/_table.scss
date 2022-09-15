@@ -1,0 +1,193 @@
+.table-scroll {
+	margin-bottom: 30px;
+}
+
+.table-tooltip {
+	background: $black;
+	border-radius: 1px;
+	padding: 12px;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.icon-rotate {
+	display: block;
+	width: 21px;
+	height: 17px;
+	background-image: url("../img/icon-rotate-device.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 21px 17px;
+	margin-right: 10px;
+}
+
+.table-tooltip-content {
+	color: $secondary-color;
+	font-size: 11px;
+	line-height: 16px;
+	width: calc(100% - 40px);
+}
+
+table {
+	margin-bottom: 30px;
+
+	tfoot td,
+	tfoot th,
+	thead td,
+	thead th {
+		font-weight: $global-weight-normal;
+		border-right: 1px solid $white;
+		@include breakpoint(medium down) {
+			font-size: 15px;
+		}
+
+		&:last-child {
+			border-right: 0;
+		}
+	}
+
+	tbody td {
+		border-right: 1px solid $white;
+		@include breakpoint(medium down) {
+			font-size: 15px;
+		}
+
+		&:last-child {
+			border-right: 0;
+		}
+	}
+
+	p {
+		margin-bottom: 0 !important;
+	}
+
+	&.table-scrollable {
+		margin-bottom: 0;
+	}
+
+	&.table-fixed-column {
+		border-collapse: collapse;
+	}
+
+	&.table-half-width {
+		width: 100%;
+		@include breakpoint(large) {
+			width: 50%;
+		}
+
+		&.right {
+			clear: right;
+			@include breakpoint(large) {
+				float: right;
+				margin: rem-calc(10 0 30 25);
+			}
+		}
+	}
+
+	&.table-blank {
+		background-color: transparent;
+		color: $black;
+
+		.even,
+		.odd,
+		tbody,
+		td,
+		tfoot,
+		th,
+		thead,
+		tr {
+			background-color: transparent;
+			color: $black;
+		}
+
+		tr.table-subheader {
+			color: $black;
+			background-color: transparent;
+		}
+	}
+}
+
+.table-scrollNofication {
+	font-size: 12px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+	margin: 10px 0;
+	@include breakpoint(medium up) {
+		justify-content: flex-end;
+	}
+
+	&__bg {
+		border-radius: 3px;
+		padding: 5px 8px;
+		justify-content: center;
+	}
+
+	img {
+		margin-right: 5px;
+	}
+}
+
+.btm-padding-removed {
+	padding-bottom: 0;
+}
+
+.responsive-table-wrapper {
+	position: relative;
+	margin-bottom: 20px;
+
+	.responsive {
+		overflow: auto;
+		overflow-x: scroll;
+		margin-left: 170px;
+		overflow-y: visible;
+
+		.table-rates {
+			th:not(.headcol) {
+				white-space: nowrap;
+			}
+		}
+
+		table {
+			margin-bottom: 0;
+
+			th {
+				min-width: 140px;
+
+				&.headcol {
+					background-color: $black;
+				}
+			}
+
+			td,
+			th {
+				// min-height: 37px;
+				white-space: pre;
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+.headcol {
+	border-right: 1px solid $white;
+	position: absolute;
+	width: 170px !important;
+	min-width: 170px !important;
+	left: 0;
+	top: auto;
+	padding-left: 10px;
+}
+
+.even {
+	.headcol {
+		background-color: $tablehover;
+	}
+}
+
+.odd {
+	.headcol {
+		background-color: $white;
+	}
+}

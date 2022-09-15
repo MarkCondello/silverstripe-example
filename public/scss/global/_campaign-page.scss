@@ -1,0 +1,461 @@
+// .campaign-page {
+// 	margin-top: -33px;
+// 	@include breakpoint(large) {
+// 		margin-top: -43px;
+// 	}
+// 	// IE11 fix, so the position of the triangle is correct.
+// 	.ie-fix {
+// 		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+// 			right: -16px !important;
+// 		}
+// 	}
+//
+// 	.triangle {
+// 		position: absolute !important;
+// 		right: -1px;
+// 	}
+//
+// 	.white--copy {
+// 		* {
+// 			color: $white;
+// 		}
+// 	}
+// 	// .gradient {
+// 	// 	.employer-region & {
+// 	// 		background: linear-gradient(180deg, rgba(205,0,138,1) 0%, rgba(158,0,82,1) 85%);
+// 	// 	}
+// 	//
+// 	// 	.member-region & {
+// 	// 		background: linear-gradient(180deg, rgba(0,215,248,1) 0%, rgba(0,174,239,1) 85%);
+// 	// 	}
+// 	//
+// 	// 	.neutral-region & {
+// 	// 		background: linear-gradient(180deg, rgba(4,171,78,1) 0%, rgba($forest-color,1) 95%);
+// 	// 	}
+// 	// }
+// 	.bannerContent,
+// 	.videoBlock {
+// 		h1 {
+// 			margin-bottom: 0;
+// 			line-height: 1.2;
+// 			position: relative;
+// 			@include breakpoint(medium only) {
+// 				font-size: 42px;
+// 			}
+// 		}
+//
+// 		.introduction {
+// 			margin-top: 0;
+// 			line-height: 1.4;
+// 		}
+// 	}
+//
+// 	.bannerBlock {
+// 		position: relative;
+// 		margin: 3px 3px 30px;
+// 		overflow: hidden;
+//
+// 		&--overlay {
+// 			position: absolute;
+// 			left: 0;
+// 			top: 0;
+// 			right: 0;
+// 			bottom: 0;
+// 			width: 100%;
+// 			height: 100%;
+// 			background: rgba(#4C4C4C, 0.6);
+// 		}
+// 	}
+//
+// 	.bannerContent {
+// 		display: flex;
+// 		align-items: flex-end;
+// 		justify-content: center;
+// 		position: absolute;
+// 		left: 0;
+// 		top: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		width: 100%;
+// 		height: 100%;
+// 		z-index: 2;
+// 		text-shadow: 2px 0 rgba($black, 0.25);
+//
+// 		&--maxwidth {
+// 			max-width: 340px;
+// 			margin-bottom: 50px;
+// 			@include breakpoint(medium) {
+// 				max-width: 720px;
+// 			}
+// 			@include breakpoint(large) {
+// 				margin-bottom: 90px;
+// 			}
+// 		}
+// 	}
+//
+// 	.triangleBlock {
+// 		width: 36px;
+// 		margin: 10px auto;
+//
+// 		.title-triangle {
+// 			width: 36px;
+// 			height: 18px;
+// 			margin: 0;
+// 			// .employer-region & {
+// 			// 	fill: $burgundy-color;
+// 			// }
+// 			//
+// 			// .member-region & {
+// 			// 	fill: $sky-color;
+// 			// }
+// 			//
+// 			// .neutral-region & {
+// 			// 	fill: $forest-color;
+// 			// }
+// 		}
+// 	}
+// 	// .triangleLeft {
+// 	// 	float: left;
+// 	// 	transform: scaleX(-1);
+// 	// }
+// 	//
+// 	// .triangleRight {
+// 	// 	float: right;
+// 	// }
+// 	.bannerTab {
+// 		background-color: $white;
+// 		width: 100%;
+// 		height: 36px;
+// 		position: absolute;
+// 		bottom: -1px;
+// 		left: 25px;
+// 		z-index: 1;
+//
+// 		.title-triangle {
+// 			margin: 0;
+// 			// fill: $sky-color;
+// 			height: rem-calc(18);
+// 			width: rem-calc(18);
+// 			// .employer-region & {
+// 			// 	fill: $burgundy-color;
+// 			// }
+// 			//
+// 			// .member-region & {
+// 			// 	fill: $sky-color;
+// 			// }
+// 			//
+// 			// .neutral-region & {
+// 			// 	fill: $forest-color;
+// 			// }
+// 		}
+// 	}
+//
+// 	.bannerImage {
+// 		background-position: center;
+// 		background-size: auto 430px;
+// 		background-repeat: no-repeat;
+//
+// 		&::before {
+// 			content: "";
+// 			width: 1px;
+// 			margin-left: -1px;
+// 			float: left;
+// 			height: 0;
+// 			padding-top: 430px;
+// 			@include breakpoint(medium) {
+// 				// padding-top: 58%;
+// 			}
+// 			@include breakpoint(large) {
+// 				padding-top: 430px;
+// 			}
+// 			@include breakpoint(xlarge) {
+// 				padding-top: 430px;
+// 			}
+// 		}
+//
+// 		&::after {
+// 			content: "";
+// 			display: table;
+// 			clear: both;
+// 		}
+// 	}
+//
+// 	.videoBlock {
+// 		padding: 3px;
+// 		position: relative;
+// 		margin-bottom: 30px;
+//
+// 		.flex-video {
+// 			padding-bottom: 50%;
+// 			margin-bottom: 20px;
+// 		}
+//
+// 		.title-triangle {
+// 			fill: $white;
+// 			height: rem-calc(10);
+// 			width: rem-calc(10);
+// 		}
+//
+// 		&--maxwidth {
+// 			margin: 0 auto;
+// 			max-width: 1440px;
+// 		}
+//
+// 		.triangle {
+// 			bottom: -16px;
+// 			@include bordered-triangle(rem-calc(32), rem-calc(0), $white, $white, left);
+// 		}
+// 	}
+//
+// 	.calloutBlock {
+// 		padding: 30px 20px;
+// 		margin: 10px 15px 50px 0;
+// 		max-width: 680px;
+// 		position: relative;
+// 		display: block;
+// 		@include breakpoint(medium) {
+// 			margin: 20px auto 60px;
+// 		}
+// 		@include breakpoint(large) {
+// 			max-width: 900px;
+// 		}
+//
+// 		&:hover {
+// 			text-decoration: none;
+// 			// .member-region & {
+// 			// 	.button {
+// 			// 		color: $white;
+// 			// 		background-color: scale-color($sky-color, $lightness: -20%);
+// 			// 	}
+// 			// }
+// 			//
+// 			// .neutral-region & {
+// 			// 	.button {
+// 			// 		color: $white;
+// 			// 		background-color: scale-color($forest-color, $lightness: -20%);
+// 			// 	}
+// 			// }
+// 			//
+// 			// .employer-region & {
+// 			// 	.button {
+// 			// 		color: $white;
+// 			// 		background-color: scale-color($burgundy-color, $lightness: -20%);
+// 			// 	}
+// 			// }
+// 		}
+//
+// 		.triangle {
+// 			top: -1px;
+// 			@include bordered-triangle(rem-calc(32), rem-calc(0), $white, $white, down);
+// 		}
+//
+// 		h2 {
+// 			color: $white;
+// 			font-size: 22px;
+// 			line-height: 1.4;
+// 			margin-bottom: 0;
+// 			@include breakpoint(medium) {
+// 				font-size: 26px;
+// 			}
+// 		}
+//
+// 		.button {
+// 			font-size: 18px;
+// 			margin-bottom: -74px;
+// 			padding: 14px 25px;
+// 			position: relative;
+//
+// 			.triangle {
+// 				top: -1px;
+// 			}
+// 			// .employer-region & {
+// 			// 	border: 2px solid $burgundy-color;
+// 			// 	color: $burgundy-color;
+// 			//
+// 			// 	.triangle {
+// 			// 		@include bordered-triangle(rem-calc(32), rem-calc(0), $burgundy-color, $burgundy-color, down);
+// 			// 	}
+// 			// }
+// 			// .neutral-region & {
+// 			// 	border: 2px solid $forest-color;
+// 			// 	color: $forest-color;
+// 			//
+// 			// 	.triangle {
+// 			// 		@include bordered-triangle(rem-calc(32), rem-calc(0), $forest-color, $forest-color, down);
+// 			// 	}
+// 			// }
+// 			// .member-region & {
+// 			// 	border: 2px solid $sky-color;
+// 			// 	color: $sky-color;
+// 			//
+// 			// 	.triangle {
+// 			// 		@include bordered-triangle(rem-calc(32), rem-calc(0), $sky-color, $sky-color, down);
+// 			// 	}
+// 			// }
+// 		}
+// 	}
+//
+// 	.leadCapture {
+// 		padding: 30px;
+// 		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+// 		margin: 10px auto 30px 15px;
+// 		max-width: 680px;
+// 		@include breakpoint(medium) {
+// 			padding: 60px;
+// 			margin: 40px auto 50px;
+// 		}
+// 		@include breakpoint(large) {
+// 			padding: 60px 80px;
+// 			max-width: 900px;
+// 		}
+//
+// 		h3 {
+// 			@include breakpoint(small only) {
+// 				font-size: 24px;
+// 			}
+// 			// .member-region & {
+// 			// 	color: $sky-color;
+// 			// }
+// 			//
+// 			// .employer-region & {
+// 			// 	color: $burgundy-color;
+// 			// }
+// 			//
+// 			// .neutral-region & {
+// 			// 	color: $forest-color;
+// 			// }
+// 		}
+//
+// 		button {
+// 			margin-bottom: 0;
+// 			font-size: 18px;
+// 			position: relative;
+// 			padding-right: 25px;
+// 			padding-left: 25px;
+//
+// 			.triangle {
+// 				@include bordered-triangle(rem-calc(32), rem-calc(0), $white, $white, down);
+// 			}
+// 			// .member-region & {
+// 			// 	background-color: $sky-color;
+// 			//
+// 			// 	&:focus,
+// 			// 	&:hover {
+// 			// 		background-color: scale-color($sky-color, $lightness: -20%);
+// 			// 	}
+// 			// }
+// 			// .employer-region & {
+// 			// 	background-color: $burgundy-color;
+// 			//
+// 			// 	&:focus,
+// 			// 	&:hover {
+// 			// 		background-color: scale-color($burgundy-color, $lightness: -20%);
+// 			// 	}
+// 			// }
+// 			// .neutral-region & {
+// 			// 	background-color: $forest-color;
+// 			//
+// 			// 	&:focus,
+// 			// 	&:hover {
+// 			// 		background-color: scale-color($forest-color, $lightness: -20%);
+// 			// 	}
+// 			// }
+// 		}
+//
+// 		label {
+// 			font-size: 16px;
+// 			line-height: 1.8;
+// 			color: $black;
+// 			@include breakpoint(medium) {
+// 				font-size: 18px;
+// 			}
+// 		}
+//
+// 		input {
+// 			&[type=number]::-webkit-inner-spin-button,
+// 			&[type=number]::-webkit-outer-spin-button {
+// 				-webkit-appearance: none;
+// 				margin: 0;
+// 			}
+//
+// 			&[type=email],
+// 			&[type=number],
+// 			&[type=text] {
+// 				background-color: $white;
+// 				border-radius: 4px;
+// 				height: 42px;
+//
+// 				&:focus {
+// 					border-width: 2px;
+// 				}
+// 			}
+// 		}
+//
+// 		textarea {
+// 			background-color: $white;
+// 			border-radius: 4px;
+//
+// 			&:focus {
+// 				border-width: 2px;
+// 			}
+// 		}
+// 	}
+//
+// 	.employer-region &,
+// 	.member-region &,
+// 	.neutral-region & {
+// 		input.is-invalid-input {
+// 			&[type=email],
+// 			&[type=number],
+// 			&[type=text] {
+// 				border: 2px solid $alert-color;
+//
+// 				&:focus {
+// 					border-color: $alert-color;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	// .member-region & {
+// 	// 	input,
+// 	// 	textarea {
+// 	// 		&[type=email],
+// 	// 		&[type=number],
+// 	// 		&[type=text] {
+// 	// 			border: 2px solid $sky-color;
+// 	//
+// 	// 			&:focus {
+// 	// 				border-color: $ocean-color;
+// 	// 			}
+// 	// 		}
+// 	// 	}
+// 	// }
+// 	// .neutral-region & {
+// 	// 	input,
+// 	// 	textarea {
+// 	// 		&[type=email],
+// 	// 		&[type=number],
+// 	// 		&[type=text] {
+// 	// 			border: 2px solid $forest-color;
+// 	//
+// 	// 			&:focus {
+// 	// 				border-color: $forest-color;
+// 	// 			}
+// 	// 		}
+// 	// 	}
+// 	// }
+// 	// .employer-region & {
+// 	// 	input,
+// 	// 	textarea {
+// 	// 		&[type=email],
+// 	// 		&[type=number],
+// 	// 		&[type=text] {
+// 	// 			border: 2px solid $burgundy-color;
+// 	//
+// 	// 			&:focus {
+// 	// 				border-color: scale-color($burgundy-color, $lightness: -20%);
+// 	// 			}
+// 	// 		}
+// 	// 	}
+// 	// }
+// }

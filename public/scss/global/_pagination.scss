@@ -1,0 +1,18 @@
+.pagination {
+	.current {
+		border-radius: 34px;
+		border: 1px $primary-color solid;
+
+		&.first {
+			padding: 1px 13px;
+		}
+	}
+
+	a:not(.disabled) {
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

@@ -19,6 +19,7 @@
     "sass": "^1.52.3",
     "vue": "^3.2.25",
     "vite": "^2.9.9",
-    "vite-plugin-imagemin": "^0.6.1"
+    "vite-plugin-imagemin": "^0.6.1",
+    "foundation-sites": "^6.7.4"
   }
 }

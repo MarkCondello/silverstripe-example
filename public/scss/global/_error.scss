@@ -1,0 +1,11 @@
+.errorpage {
+	// background: url("../img/bg-error-banner.jpg") no-repeat;
+	// background-size: cover;
+	// background-position: center bottom;
+	section {
+		padding: 125px 0;
+		@include breakpoint(medium) {
+			padding: 140px 0;
+		}
+	}
+}

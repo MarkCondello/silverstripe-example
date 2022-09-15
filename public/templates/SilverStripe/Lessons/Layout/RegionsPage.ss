@@ -8,7 +8,6 @@
 <div class="content">
   <div class="container">
       <div class="row">
-
           <!-- BEGIN MAIN CONTENT -->
           <div class="main col-sm-8">
               <div class="grid-style1 clearfix">
@@ -102,5 +101,7 @@
 
       </div>
   </div>
+  <%-- Container for the Vue widget --%>
+    <div id="womenVMenContainer"></div>
 </div>
 <!-- END CONTENT WRAPPER -->
