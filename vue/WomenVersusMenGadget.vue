@@ -173,12 +173,10 @@ export default {
             this.menBalance = balance.men
             this.womenBalance = balance.women
             this.diff = this.menBalance - this.womenBalance
-
             setTimeout(()=>{
                 this.womenRatio = balance.women / balance.men * 100
                 this.menRatio = 100
             }, 500)
-
             console.log({balance})
         },
     }

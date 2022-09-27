@@ -1,6 +1,6 @@
+import './public/scss/index.scss'
 import { createApp } from 'vue'
-import FooterSocialsApp from './vue/FooterSocialsApp.vue' // should this be imported as a dynamic module
-// import WomenVersusMenGadget from './vue/WomenVersusMenGadget.vue' // should this be imported as a dynamic module
+import FooterSocialsApp from './vue/FooterSocialsApp.vue'
 
 const rootSocialsElement = document.getElementById('socialsContainer')
 if (rootSocialsElement) {
@@ -13,7 +13,6 @@ if (rootSocialsElement) {
 const womenVMenContainer = document.getElementById('womenVMenContainer')
 if (womenVMenContainer){
   import('./modules/wvm')
-  // createApp(WomenVersusMenGadget).mount('#womenVMenContainer')
 }
 
 const counter = document.querySelector('#counter')
@@ -24,7 +23,4 @@ if (counter) {
 }
 
 // ToDo:
-// Use a dynamic module import DONE
-// Integrate Vue DONE
 // Use a css module
-// Use scss import in this file

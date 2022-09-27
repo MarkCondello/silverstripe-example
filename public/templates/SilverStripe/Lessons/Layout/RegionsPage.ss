@@ -105,3 +105,4 @@
     <div id="womenVMenContainer"></div>
 </div>
 <!-- END CONTENT WRAPPER -->
+<% include Footer %>
