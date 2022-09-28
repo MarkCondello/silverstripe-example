@@ -1,6 +1,6 @@
 # Environment requirements
-PHP 7.2
-Composer 2
+- PHP 7.2
+- Composer 2
 
 # Setup with Vite
 
