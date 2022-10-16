@@ -3,8 +3,12 @@
 namespace {
 
     use SilverStripe\CMS\Controllers\ContentController;
+    use SilverStripe\Lessons\VideoComment;
     use SilverStripe\View\Requirements;
 
+    use SilverStripe\Security\SecurityToken;
+    use SilverStripe\Control\HTTPRequest;
+    use SilverStripe\Dev\Debug;
 
     class PageController extends ContentController
     {
@@ -23,7 +27,7 @@ namespace {
          *
          * @var array
          */
-        private static $allowed_actions = [];
+        private static $allowed_actions = ['createVideoComment'];
 
         protected function init()
         {
@@ -41,6 +45,47 @@ namespace {
             Requirements::javascript('javascript/common/nice-scroll.js');
             Requirements::javascript('javascript/common/jquery-browser.js');
             Requirements::javascript('javascript/scripts.js');
+        }
+
+        public function SecurityToken()
+        {
+            SecurityToken::inst();
+            return SecurityToken::inst()->getSecurityID();
+        }
+
+        public function createVideoComment(HTTPRequest $request)
+        {
+            // Debug::dump($request);
+            $inputValues = json_decode($request->getBody()); // need to check request body as the data was not sending to post object
+            //   Debug::dump($inputValues);
+            // die();
+            $response = new \stdClass(); // what is this?
+            $response->message = 'Unsuccessful...';
+            $response->success = false;
+            // SecurotyToken checks are not working
+            // if (SecurityToken::inst()->checkRequest($request) && $request->postVar('name') && $request->postVar('comment')) {
+            if ($inputValues->name && $inputValues->comment) {
+                $videoComment = new VideoComment();
+                $videoComment->Name = $inputValues->name;
+                $videoComment->Comment = $inputValues->comment;
+
+                try {
+                    if ($videoComment->write() !== false) {
+                        $response->message = 'Successfully created Video comment.';
+                        $response->success = true;
+                        $response->data = $inputValues;
+                        return json_encode($response);
+                    } else {
+                        $response->message = 'Database error while creating Video comment.';
+                        return json_encode($response);
+                    }
+                } catch(Exception $e) {
+                    $response->message = 'Error saving Video comment: ' . $e;
+                    return json_encode($response);
+                }
+            }
+            return json_encode($response);
+
         }
     }
 }

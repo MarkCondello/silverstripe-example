@@ -2,9 +2,11 @@ import './public/scss/index.scss'
 import { createApp } from 'vue'
 import FooterSocialsApp from './vue/FooterSocialsApp.vue'
 
-const rootSocialsElement = document.getElementById('socialsContainer')
-if (rootSocialsElement) {
+const copyrightSection = document.getElementById('copyright'),
+ rootSocialsElement = document.getElementById('socialsContainer')
+if (copyrightSection && rootSocialsElement) {
   const footerSocialsApp = createApp(FooterSocialsApp, {
+    token: copyrightSection.dataset.token,
     content: JSON.parse(rootSocialsElement.dataset.content)
   })
   footerSocialsApp.mount('#socialsContainer')

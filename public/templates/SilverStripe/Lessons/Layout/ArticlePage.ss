@@ -145,7 +145,8 @@
 			
 			<!-- BEGIN SIDEBAR -->
 			<div class="sidebar gray col-sm-4">
-				
+				<% include CustomerRatings %>
+
 				<h2 class="section-title">Categories</h2>
 				<ul class="categories">
 					<li><a href="#">Business <span>(2)</span></a></li>

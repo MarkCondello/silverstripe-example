@@ -6,6 +6,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>One Ring Rentals - Home</title>
+	<%--This does't work <meta name="security-token" name="$SecurityToken" /> --%>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<!-- IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -13,6 +14,7 @@
 	<![endif]-->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,500,900%7COpen+Sans:400,700,400italic" rel="stylesheet" type="text/css" />
 	$Vite.HeaderTags.RAW
+
 </head>
 <body>
 	<div id="wrapper">

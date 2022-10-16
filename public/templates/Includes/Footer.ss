@@ -66,14 +66,18 @@
     </div>
   </div>
   <!-- BEGIN COPYRIGHT -->
-  <div id="copyright">
+  <div id="copyright" data-token="$SecurityToken">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           &copy; 2014 One Ring Rentals
           <%-- Create a Vue component for the socials --%>
           <% with $siteConfig %>
-          <div id="socialsContainer" style="float:right;" data-content="$getSocialsForFrontEnd"></div>
+          <div
+            id="socialsContainer"
+            style="float:right;"
+            data-content="$getSocialsForFrontEnd"
+          ></div>
           <% end_with %>
           <!-- END SOCIAL NETWORKS -->
         </div>

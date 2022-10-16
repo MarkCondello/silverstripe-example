@@ -28,7 +28,9 @@ class LandingPage extends Page
     $fields = parent::getCMSFields();
     $fields->addFieldsToTab('Root.Main', TextField::create('BannerTitle', 'Banner title text'));
     // https://api.silverstripe.org/4/SilverStripe/Forms/DropdownField.html
-    $fields->addFieldsToTab('Root.Main', DropdownField::create('ServiceTypeID', 'Select a service type', ServiceType::get() )->setEmptyString('(Select a service)'));
+    $fields->addFieldsToTab('Root.Main', DropdownField::create('ServiceTypeID', 'Select a service type', ServiceType::get())
+      ->setEmptyString('(Select a service)'));
     return $fields;
   }
 }
+// This model is being used to display partners who each have a service type and can have many customer ratings

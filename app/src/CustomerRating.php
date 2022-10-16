@@ -1,5 +1,5 @@
 <?php
-namespace Markcond\Research; 
+namespace Markcond\Research;
 
 use SilverStripe\ORM\DataObject;
 
