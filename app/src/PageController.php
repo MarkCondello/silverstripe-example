@@ -55,28 +55,20 @@ namespace {
 
         public function createVideoComment(HTTPRequest $request)
         {
-            Debug::dump($request);
-            die();
-            // $inputValues = json_decode($request->getBody()); // need to check request body as the data was not sending to post object when using fetch or axios
-            $inputValues = json_decode($request); // need to check request body as the data was not sending to post object when using fetch or axios
-            //   Debug::dump($inputValues);
-            // die();
-            $response = new \stdClass(); // what is this?
+            $response = new \stdClass();
             $response->message = 'Unsuccessful...';
             $response->success = false;
-            // SecurotyToken checks are not working
-            if (SecurityToken::inst()->checkRequest($request) && $request->postVar('name') && $request->postVar('comment')) {
-            // if ($inputValues->name && $inputValues->comment) {
+            // SecurityToken checks are not working
+            // if (SecurityToken::inst()->checkRequest($request) && $request->postVar('name') && $request->postVar('comment')) {
+            if ($request->postVar('name') && $request->postVar('comment')) {
                 $videoComment = new VideoComment();
                 $videoComment->Name =  $request->postVar('name');
                 $videoComment->Comment = $request->postVar('comment');
-                // $videoComment->Name = $inputValues->name;
-                // $videoComment->Comment = $inputValues->comment;
                 try {
                     if ($videoComment->write() !== false) {
                         $response->message = 'Successfully created Video comment.';
                         $response->success = true;
-                        $response->data = $inputValues;
+                        $response->data = $request->postVars();
                         return json_encode($response);
                     } else {
                         $response->message = 'Database error while creating Video comment.';

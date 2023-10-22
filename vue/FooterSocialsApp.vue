@@ -9,12 +9,13 @@
   <fieldset>
     <legend>Leave a video comment</legend>
     <div>
-      <label>Your name</label>
+      <label>Your name:</label>
       <input type="text" v-model="name" required/>
     </div>
     <div>
-      <label>Your comment</label>
-      <textarea @input="handleComment" required></textarea>
+      <label>Your comment:</label>
+      <textarea v-model="comment" required></textarea>
+      <!-- <textarea @input="handleComment" required></textarea> -->
     </div>
     <div>
       <button @click="handleSend">Send comment</button>
