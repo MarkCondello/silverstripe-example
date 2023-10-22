@@ -11,6 +11,7 @@ class CustomerRating extends DataObject
     'Rating' => 'Int'
   ];
   private static $has_one = [
-    'LandingPage' => LandingPage::class
+    'LandingPage' => LandingPage::class,
+    'ArticlePage' => ArticlePage::class,
   ];
 }

@@ -22,24 +22,21 @@
 				
 				<div class="blog-bottom-info">
 					<ul>
-						<li><i class="fa fa-calendar"></i> July 30, 2014</li>
+						<%-- <li><i class="fa fa-calendar"></i> July 30, 2014</li> --%>
+						<li><i class="fa fa-calendar"></i> $Date.Format('j F, Y')</li>
 						<li><i class="fa fa-comments-o"></i> 3 Comments</li>
 						<li><i class="fa fa-tags"></i> Properties, Prices, best deals</li>
 					</ul>
 					<div id="post-author"><i class="fa fa-pencil"></i>By $Author</div>
 				</div>
-				
 				<div class="post-content">
 					<div class="highlight-bold">
 						$Teaser
 					</div>
           <%-- Phasellus suscipit aliquam nisl et porttitor. Suspendisse potenti. Fusce libero velit, tristique eu mauris vitae, convallis facilisis sapien. Mauris urna diam, fringilla sit amet eleifend id, commodo ac lorem. Curabitur at erat justo.</div> --%>
-					
 					<div class="divider"></div>
-					
 					<p>$Content</p>
-					
-					<img src="http://placehold.it/270x335" alt="" class="right" />
+					<%-- <img src="http://placehold.it/270x335" alt="" class="right" />
 					<p>Vestibulum rhoncus consequat aliquet. Mauris varius posuere mattis. Duis vitae molestie arcu. Curabitur sollicitudin, velit ut eleifend auctor, nibh orci pharetra risus, a malesuada nisi felis vel turpis. Aliquam fermentum nulla felis, sed molestie libero porttitor in.</p>
 					<p>Quisque ut dictum justo. Vestibulum lacinia arcu ac dui volutpat consectetur. Nulla dui mauris, consequat non aliquet vitae, volutpat at nunc. Sed eget hendrerit odio. Donec sagittis venenatis est ac fringilla.</p>
 					<p>Phasellus suscipit aliquam nisl et porttitor. Suspendisse potenti. Fusce libero velit, tristique eu mauris vitae, convallis facilisis sapien. Mauris urna diam, fringilla sit amet eleifend id, commodo ac lorem. Curabitur at erat justo. Morbi tincidunt, nisi in hendrerit adipiscing, lacus orci pellentesque orci, ac tempus purus libero in lectus.</p>
@@ -54,7 +51,7 @@
 					
 					<p>Phasellus pulvinar purus turpis, a consequat orci pellentesque vitae. Donec suscipit, sapien quis vehicula dictum, massa odio posuere nisl, consectetur viverra purus dui vel elit. Fusce tempor ante in metus egestas egestas.</p>
 					
-					<p>Sed in mauris consectetur lectus ultricies mollis. Nulla at vulputate mi. Phasellus mauris augue, sollicitudin nec ornare congue, posuere eget nulla. Vestibulum pulvinar mauris ut magna interdum lacinia. Nam eu viverra urna. Quisque turpis massa, gravida ut faucibus nec, faucibus non turpis. Mauris facilisis et est a mollis. Mauris non sagittis risus</p>
+					<p>Sed in mauris consectetur lectus ultricies mollis. Nulla at vulputate mi. Phasellus mauris augue, sollicitudin nec ornare congue, posuere eget nulla. Vestibulum pulvinar mauris ut magna interdum lacinia. Nam eu viverra urna. Quisque turpis massa, gravida ut faucibus nec, faucibus non turpis. Mauris facilisis et est a mollis. Mauris non sagittis risus</p> --%>
 				</div>
 				
 				<div class="share-wraper col-sm-12 clearfix">

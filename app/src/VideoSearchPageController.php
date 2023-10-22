@@ -4,7 +4,7 @@ namespace SilverStripe\Lessons;
 use PageController;
 use SilverStripe\Control\HTTP;
 use SilverStripe\Control\HTTPRequest;
-use SilverStripe\ORM\ArrayList; //WT??
+use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\PaginatedList;
 use SilverStripe\Forms\Form;
 use SilverStripe\Forms\FieldList;

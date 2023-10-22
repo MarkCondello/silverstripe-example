@@ -9,6 +9,8 @@ use SilverStripe\Assets\Image;
 use SilverStripe\Assets\File;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 
+use SilverStripe\Dev\Debug;
+
 class ArticlePage extends Page 
 {
   // Prevents this item from being a root menu element
@@ -25,6 +27,10 @@ class ArticlePage extends Page
     'Brochure' => File::class,
   ];
 
+  private static $belongs_many_many = [
+    'HomePage' => HomePage::class,
+  ];
+
   public function getCMSFields()
   {
     $fields = parent::getCMSFields();
@@ -34,13 +40,19 @@ class ArticlePage extends Page
     $fields->addFieldToTab('Root.Attachments', UploadField::create('Photo'));
     // These docs are wrong now: https://www.silverstripe.org/learn/lessons/v4/working-with-files-and-images-1?_ga=2.115260359.1318327465.1652136890-1194748893.1652136890
     // refer to this instead: https://docs.silverstripe.org/en/4/developer_guides/files/file_management/
-    $fields->addFieldToTab('Root.Attachments', 
+    $fields->addFieldToTab('Root.Attachments',
       UploadField::create('Brochure', 'Travel brochure, optional (PDF only)')
         ->setFolderName('travel-brochures')
         ->setAllowedExtensions(['pdf'])
       );
     // $brochure->getValidator()->setAllowedExtensions(['pdf']);
     return $fields;
+  }
+
+  function getAuthor()
+  {
+    // Debug::dump($this->Teaser);
+    // return $this->Author;
   }
 
 }
